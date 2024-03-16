@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="pics/web_icon.png">
+    <title>
+        EgyBooks
+    </title>
+</head>
+
+<body>
+
+    <!--Nav bar-->
+    <a class="active" href="login">Login</a>
+    <span>/</span>
+    <a href="Register">Register</a>
+    <a href="Help">Help</a>
+    <a href="About">About Us</a>
+    <a href="ViewAll">View all</a>
+    <a href="BorrowBook">Borrow Book</a>
+    <a href="AddBook">Add Book</a>
+    
+    <!--Search bar-->
+    <form action="search" method="GET">
+        <input type="text" name="search" placeholder="Search">
+        <select name="filter">
+            <option value="title">Title</option>
+            <option value="author">Author</option>
+            <option value="category">Category</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+
+</body>
+
+</html>
