@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EgyBooks</title>
+    </head>
+    <body>
+        <h1>Sign Up</h1>
+
+        <form method="POST">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" required id="username" name="username" placeholder="Enter your username">
+            </div>
+        
+            <br>
+
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" required id="password" name="password" placeholder="Enter your password">
+            </div>
+
+            <br>
+
+            <div>
+                <label for="confirm password">Confirm password:</label>
+                <input type="password" required id="confirm password" name="confirm password" placeholder="Re-enter password">
+            </div>
+
+            <br>
+
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" required id="email" name="email" placeholder="Enter your email address">
+            </div>
+
+            <br>
+
+            <div>
+                <label for="account type">Account Type:</label>
+
+                <label for="Admin">Admin</label>
+                <input type="radio" required id="Admin" name="account type" value="Admin">
+
+                <label for="User">User</label>
+                <input type="radio" required id="User" name="account type" value="User">
+            </div>
+
+            <br>
+
+            <div>
+                <input type="reset" value="Reset">
+            </div>
+
+            <br>
+
+            <div>
+                <input type="submit" value="Sign Up">
+            </div>
+        </form>
+    </body>
+</html>
