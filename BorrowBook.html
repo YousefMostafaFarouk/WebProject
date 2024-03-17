@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="pics/web_icon.png">
-    <title>
-        EgyBooks | Borrow Books
-    </title>
+    <title>EgyBooks|Borrow Books</title>
 </head>
 
 <body>
@@ -23,7 +21,7 @@
         <div>
             <label for="bk_id">Book ID</label>
             <br>
-            <input id="bk_id" type="number" name="bk_id" placeholder="Book ID" min="1" max="10" step="1" required>
+            <input id="bk_id" type="number" name="bk_id" placeholder="Book ID" min="1" max="12" step="1" required>
         </div>
 
         <br>
@@ -59,7 +57,7 @@
         <div>
             <label for="author">Author</label>
             <br>
-            <input id="author" type="text" name="author" placeholder="Author" required>
+            <input id="author" type="text" name="author" placeholder="Author" required maxlength="10">
         </div>
 
         <br>
@@ -82,7 +80,7 @@
         <div>
             <label for="f_name">First Name</label>
             <br>
-            <input id="f_name" type="text " required placeholder="Enter your first name " name="f_name">
+            <input id="f_name" type="text" required placeholder="Enter your first name " name="f_name" maxlength="10">
         </div>
 
         <br>
@@ -90,7 +88,7 @@
         <div>
             <label for="m_name">Middle Name</label>
             <br>
-            <input id="m_name " type="text " required placeholder="Enter your middle name" name="m_name">
+            <input id="m_name" type="text" required placeholder="Enter your middle name" name="m_name" maxlength="10">
         </div>
 
         <br>
@@ -98,7 +96,7 @@
         <div>
             <label for="l_name">Last Name</label>
             <br>
-            <input id="l_name " type="text " required placeholder="Enter your last name" name="l_name">
+            <input id="l_name" type="text" required placeholder="Enter your last name" name="l_name" maxlength="10">
         </div>
 
         <br>
@@ -106,7 +104,7 @@
         <div>
             <label for="mail">Email</label>
             <br>
-            <input id="mail" type="email" required placeholder="Enter your email" name="mail">
+            <input id="mail" type="email" required placeholder="Enter your email" name="mail" maxlength="25">
         </div>
 
         <br>
@@ -114,7 +112,7 @@
         <div>
             <label for="ph_no">Phone Number</label>
             <br>
-            <input id="ph_no" type="text " required placeholder="Enter your phone number" name="ph_no">
+            <input id="ph_no" type="text " required placeholder="Enter your phone number" name="ph_no" maxlength="13">
         </div>
 
         <br>
@@ -135,7 +133,7 @@
 
         <br>
 
-        <input type="submit" name="Submit">
+        <input type="submit" name="Submit" required>
         <input type="reset" name="Reset">
 
     </form>
