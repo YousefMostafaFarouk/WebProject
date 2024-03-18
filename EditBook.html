@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="pics/web_icon.png">
+    <title>The Redshirt | EgyBooks</title>
+</head>
+
+<body>
+
+    <!--Nav bar-->
+    <a class="active" href="login">Login</a>
+    <span>/</span>
+    <a href="Register.html" target="_blank">Register</a>
+    <a href="Help.html" target="_blank">Help</a>
+    <a href="About.html" target="_blank">About Us</a>
+    <a href="ViewAll.html" target="_blank">View all</a>
+    <a href="BorrowBook.html" target="_blank">Borrow Book</a>
+    <a href="AddBook.html" target="_blank">Add Book</a>
+
+    <!--Search bar-->
+    <form action="search" method="GET">
+        <input type="text" name="search" placeholder="Search">
+        <select name="filter">
+            <option value="title">Title</option>
+            <option value="author">Author</option>
+            <option value="category">Category</option>
+        </select>
+        <button type="submit">Search</button>
+    </form>
+    
+    <hr></hr>
+
+    <label for="file_input">Edit photo for the book</label><br><br>
+        <input type="file" id="file_input" accept="image/*"><br><br>
+
+    <form action="edit_name" method="GET">
+        <input type="text" name="Name" placeholder="Edit Name">
+    </form>
+
+    <form action="edit_category" method="GET">
+        <input type="text" name="Category" placeholder="Edit Category">
+    </form>
+
+    <form action="edit_author_name" method="GET">
+        <input type="text" name="Author Name" placeholder="Edit Author Name">
+    </form>
+
+    <br><br>
+    <label for="Description">Description:</label><br><br>
+        <textarea id="description" placeholder="Write a description..." rows="20" cols="50"></textarea><br><br>
+
+    <label for="About Book">About Book:</label><br><br>
+
+    <form action="edit_edition" method="GET">
+        <input type="text" name="Edition" placeholder="Edit Edition">
+    </form>
+
+    <form action="edit_publisher" method="GET">
+        <input type="text" name="Author Name" placeholder="Edit Author Name">
+    </form>
+
+    <form action="edit_number_of_pages" method="GET">
+        <input type="text" name="Author Name" placeholder="Edit Author Name">
+    </form>
+
+    <form action="edit_code" method="GET">
+        <input type="text" name="Author Name" placeholder="Edit Author Name">
+    </form>
+
+    <form action="edit_author_name" method="GET">
+        <input type="text" name="Author Name" placeholder="Edit Author Name">
+    </form>
+
+    <br><br>
+    <label for="About Author">About Author:</label><br><br>
+        <textarea id="author_description" placeholder="Write a description..." rows="20" cols="50"></textarea><br><br>
+
+    <input type="button" onclick="alert('Are you sure you want to delete this book?')" value="Delete Book">
+</body>
+
+</html>
