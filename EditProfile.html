@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EgyBooks</title>
+        <link rel="icon" type="image/png" href="pics/web_icon.png">
+    </head>
+    <body>
+        <!--Nav bar-->
+        <a class="active" href="Login.html" target="_blank">Login</a>
+        <span>/</span>
+        <a href="Signup.html" target="_blank">Sign Up</a>
+        <a href="index.html">Home</a>
+        <a href="About.html">About Us</a>
+        <a href="ViewBooks.html">View all</a>
+        <a href="BorrowBook.html">Borrow Book</a>
+        <a href="AddBook.html">Add Book</a>
+        <a href ="Profile.html">Profile</a>
+
+        <!--Search bar-->
+        <form action="search" method="GET">
+            <input type="text" name="search" placeholder="Search">
+            <select name="filter">
+                <option value="title">Title</option>
+                <option value="author">Author</option>
+                <option value="category">Category</option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
+        <h1>Edit Profile</h1>
+        <form method="POST">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" required id="username" name="username" placeholder="Enter your new username">
+            </div>
+        
+            <br>
+
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" required id="password" name="password" placeholder="Enter your new password">
+            </div>
+
+            <br>
+
+            <div>
+                <label for="confirm password">Confirm password:</label>
+                <input type="password" required id="confirm password" name="confirm password" placeholder="Re-enter password">
+            </div>
+
+            <br>
+
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" required id="email" name="email" placeholder="Enter your new email">
+            </div>
+            
+            <br>
+
+            <div>
+                <input type="reset" value="Reset">
+            </div>
+
+            <br>
+
+            <div>
+                <input type="submit" value="Confirm">
+            </div>
+        </form>
+    </body>
+</html>
