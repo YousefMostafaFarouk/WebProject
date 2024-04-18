@@ -1,0 +1,27 @@
+.aboutus_book{
+    display: flex;
+    justify-content: center;
+
+}
+
+.book_first_page{
+    color: rgb(0, 0, 0);
+    position: relative;
+    flex-direction: column;
+    width: 40vw;
+    background-color: rgb(88, 47, 14);
+    background-image: url(pics/bp.png);
+    background-size: cover;
+    border-radius: 20px;
+}
+.book_first_page *{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.aboutus_text{
+    justify-content: center;
+    color: white;
+    display: flex;
+}

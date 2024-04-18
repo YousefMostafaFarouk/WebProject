@@ -7,6 +7,7 @@
     align-items: center;
     margin: 25px;
     background-image: url("pics/29660.jpg");
+    border-radius: 50px;
     background-size: cover;
 }
 .header_text{
