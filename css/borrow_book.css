@@ -1,0 +1,112 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 900px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 30px;
+  background-color: #DDD;
+}
+
+.nav_bar {
+  margin: -8px;
+}
+
+.container header {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.container form {
+  position: relative;
+  margin-top: 16px;
+  min-height: 490px;
+}
+
+.container form .bookDetails {
+  margin-top: 30px;
+}
+
+.container form .title {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 6px 0;
+}
+
+.container form .fields {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+form .fields .inputField {
+  display: flex;
+  width: calc(100% / 3 - 15px);
+  flex-direction: column;
+  margin: 4px 0;
+}
+
+.inputField label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #2e2e2e;
+}
+
+.inputField input {
+  outline: none;
+  font-weight: 400;
+  color: #333;
+  font-size: 14px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 0 15px;
+  height: 42px;
+  margin: 8px 0;
+}
+
+.inputField input:is(:focus, :valid) {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+}
+
+.container .form .bookDetails .fields .avaCheck .btn {
+  background-color: rgb(53, 53, 53);
+  border: none;
+  color: white;
+  padding: 20px 30px;
+  font-size: 15px;
+  margin: 14px 28px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+input[type=submit] {
+  background-color: rgb(53, 53, 53);
+  color: white;
+  padding: 12px 111px;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+  margin-top: 21px;
+}
+
+input[type=reset] {
+  background-color: rgb(53, 53, 53);
+  color: white;
+  padding: 12px 111px;
+  border-radius: 5px;
+  cursor: pointer;
+  float: right;
+  margin-top: 21px;
+}
+
+form .fields .inputFieldli {
+  float: left;
+  width: 50%;
+  padding: 10px;
+  margin-top: 6px;
+}
