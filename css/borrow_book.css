@@ -1,6 +1,9 @@
+body {
+  background-color: #f6f1de;
+}
 .container {
   position: absolute;
-  margin: 5%;
+  margin: 0%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
