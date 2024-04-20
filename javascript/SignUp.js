@@ -28,14 +28,24 @@ function validateForm(){
 
     console.log("here");
     if(confirmPassword != password){
-        alert("Password Doesn't match")
+        alert("Password Doesn't match!")
         return false;
     }
 
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-        alert("Invalid email format");
+        alert("Invalid email format!");
         return false; 
+    }
+
+    if(password.length < 8){
+        alert("The password must be longer than 8 characters!")
+        return false;
+    }
+
+    var usernameRegex = /^[a-zA-Z\d][\w\d]*$/;
+    if(!usernameRegex.test(userName)){
+        alert("User name can't contain numbers in the start and can't contain special characters!")
     }
 
     if(localStorage.getItem("userInfo") != null && email == JSON.parse(localStorage.getItem("userInfo")).email){
@@ -43,7 +53,7 @@ function validateForm(){
         return false;
     }
 
-    else if(localStorage.getItem("userInfo") != null && userName == JSON.parse(localStorage.getItem("userInfo")).username){
+    if(localStorage.getItem("userInfo") != null && userName == JSON.parse(localStorage.getItem("userInfo")).username){
         alert("User name already exists!");
         return false;
     }
