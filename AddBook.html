@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="javascript/navBar.js"></script>
     <link rel="icon" type="image/png" href="pics/web_icon.png">
     <link rel="stylesheet" href="css/core.css">
     <link rel="stylesheet" href="css/nav_bar.css">
@@ -21,15 +20,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Permanent+Marker&family=Shadows+Into+Light&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="pics/web_icon.png">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5; /* Light gray background */
-            color: #333; /* Dark gray text */
-            margin: 0;
-            padding: 0;
-        }
-    </style>
     <title>EgyBooks | Add book</title>
 </head>
 
@@ -40,18 +30,18 @@
         <div class="nav_bar_actions">
             <img class = "nav_bar_icon" src="pics/web_icon.png">
             <div class = "left_buttons">
-                <ul id="login_button" class="nav_bar_button"><a href="Login.html">Login</a></ul>
-                <ul id="signup_button" class="nav_bar_button"><a href="Signup.html">Sign Up</a></ul>
+                <ul class="nav_bar_button"><a href="Login.html">Login</a></ul>
+                <ul class="nav_bar_button"><a href="Signup.html">Sign Up</a></ul>
             </div>
             <div class="center_buttons">
-                <ul id="index_button" class="nav_bar_button"><a href="index.html">Home</a></ul>
-                <ul id="viewall_button" class="nav_bar_button"><a href="ViewBooks.html">View all</a></ul>
-                <ul id="borrow_book_button" class="nav_bar_button"><a href="BorrowBook.html">Borrow Book</a></ul>
-                <ul id="add_book_button" class="nav_bar_button"><a href="AddBook.html">Add Book</a></ul>
+                <ul class="nav_bar_button"><a href="index.html">Home</a></ul>
+                <ul class="nav_bar_button"><a href="ViewBooks.html">View all</a></ul>
+                <ul class="nav_bar_button"><a href="BorrowBook.html">Borrow Book</a></ul>
+                <ul class="nav_bar_button"><a href="AddBook.html">Add Book</a></ul>
             </div>
             <div class ="right_buttons">
-                <ul id="profile_button" class="nav_bar_button"><a href="Profile.html">Profile</a></ul>
-                <ul id="aboutus_button" class="nav_bar_button"><a href="About.html">About Us</a></ul>
+                <ul class="nav_bar_button"><a href="Profile.html">Profile</a></ul>
+                <ul class="nav_bar_button"><a href="About.html">About Us</a></ul>
             </div>
         </div>
     
@@ -73,37 +63,37 @@
         </div>
     </div>
 
-    <form class="add_book_class" method="GET">
+    <form class ="add_book_class" method="GET">
 
         <p class="title">Add Book</p>
 
         <div class="form_group">
-            <label class = "subtitle" for="file_input">choose photo for the book</label><br><br>
+            <label class = "subtitle" for="file_input">choose photo for the book</label>
             <input type="file" id="file_input" accept="image/*"><br><br>
         </div>
 
         <div class="form_group">
-            <label class = "subtitle" for="nameofthebook">name of the book</label><br><br>
+            <label class = "subtitle" for="nameofthebook">name of the book</label>
             <input class="form_style" type="text" id="nameofthebook"><br><br>
         </div>
 
         <div class="form_group">
-            <label class = "subtitle" for="author">author</label><br><br>
+            <label class = "subtitle" for="author">author</label>
             <input class="form_style" type="text" id="author"><br><br>
         </div>
 
         <div class="form_group">
-            <label class = "subtitle" for="numberofpages">number of pages</label><br><br>
+            <label class = "subtitle" for="numberofpages">number of pages</label>
             <input class="form_style" type="number" id="numberofpages" min="0" max="100000"><br><br>
         </div>
 
         <div class="form_group">
-            <label class = "subtitle" for="description">description</label><br><br>
-            <textarea class="form_style" id="description" placeholder="Write a description..." rows="20" cols="50"></textarea><br><br>
+            <label class = "subtitle" for="description">description</label>
+            <textarea id="description" placeholder="Write a description..."></textarea><br><br>
 
         </div>
         <div class="form_group">
-            <label class = "subtitle" for="price">Price</label><br><br>
+            <label class = "subtitle" for="price">Price</label>
             <input class="form_style" type="number" id="price" min="0" max="10000" required><br><br>
         </div>
 
@@ -111,7 +101,7 @@
         <input type="submit" value="Add Book" style="font-size:25px;border-radius: 5px;">
 
 
-    </z>
+    </form>
 </body>
 
 </html>
