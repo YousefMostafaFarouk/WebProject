@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="javascript/SignUp.js"></script>
         <link rel="icon" type="image/png" href="pics/web_icon.png">
         <link rel="stylesheet" href="css/core.css">
         <link rel="stylesheet" href="css/nav_bar.css">
@@ -46,28 +47,28 @@
             <form method="POST">
                 <div>
                     <label for="username">Username</label>
-                    <input type="text" required id="username" name="username" placeholder="Enter your username">
+                    <input id="user_name_text" type="text" required id="username" name="username" placeholder="Enter your username">
                 </div>
             
                 <br>
 
                 <div>
                     <label for="password">Password</label>
-                    <input type="password" required id="password" name="password" placeholder="Enter your password">
+                    <input id="password_text" type="password" required id="password" name="password" placeholder="Enter your password">
                 </div>
 
                 <br>
 
                 <div>
                     <label for="confirm password">Confirm password</label>
-                    <input type="password" required id="confirm password" name="confirm password" placeholder="Re-enter password">
+                    <input id="confirm_password_text" type="password" required id="confirm password" name="confirm password" placeholder="Re-enter password">
                 </div>
 
                 <br>
 
                 <div>
                     <label for="email">Email</label>
-                    <input type="email" required id="email" name="email" placeholder="Enter your email address">
+                    <input id="email_text" type="email" required id="email" name="email" placeholder="Enter your email address">
                 </div>
 
                 <br>
@@ -75,7 +76,7 @@
                 <div>
                     <label for="account type">Account Type:</label>
 
-                    <div class="acc-type">
+                    <div id="radio_button" class="acc-type">
                         <label for="Admin">Admin</label>
                         <input type="radio" required id="Admin" name="account type" value="Admin">
 
@@ -93,7 +94,7 @@
                 <br>
 
                 <div>
-                    <input type="submit" value="Sign Up">
+                    <input id="signup_button" type="submit" value="Sign Up">
                 </div>
 
                 <br>
