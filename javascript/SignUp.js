@@ -46,6 +46,7 @@ function validateForm(){
     var usernameRegex = /^[a-zA-Z\d][\w\d]*$/;
     if(!usernameRegex.test(userName)){
         alert("User name can't contain numbers in the start and can't contain special characters!")
+        return false;
     }
 
     if(localStorage.getItem("userInfo") != null && email == JSON.parse(localStorage.getItem("userInfo")).email){
