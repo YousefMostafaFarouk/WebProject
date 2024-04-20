@@ -31,8 +31,7 @@ body {
 
 .container form .title {
   display: block;
-  margin-bottom: 8px;
-  font-size: 16px;
+  font-size: 25px;
   font-weight: 500;
   margin: 6px 0;
 }
@@ -51,8 +50,8 @@ form .fields .inputField {
   margin: 4px 0;
 }
 
-.inputField label {
-  font-size: 12px;
+.inputField label, .inputFieldli label {
+  font-size: 18px;
   font-weight: 500;
   color: #2e2e2e;
 }
@@ -79,9 +78,10 @@ form .fields .inputField {
   color: white;
   padding: 20px 30px;
   font-size: 15px;
-  margin: 14px 28px;
+  margin: 14px 44px;
   cursor: pointer;
   border-radius: 5px;
+  margin-bottom: -2px;
 }
 
 input[type=submit] {
@@ -107,6 +107,15 @@ input[type=reset] {
 form .fields .inputFieldli {
   float: left;
   width: 50%;
-  padding: 10px;
+  padding: 0px;
   margin-top: 6px;
+}
+
+
+select {
+  height: 42px;
+  font-size: 14px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  margin: 8px 0;
 }
