@@ -27,7 +27,7 @@ function validateForm(){
     }
 
     console.log("here");
-    if(confirmPassword !== password){
+    if(confirmPassword != password){
         alert("Password Doesn't match!")
         return false;
     }
@@ -49,12 +49,12 @@ function validateForm(){
         return false;
     }
 
-    if(localStorage.getItem("userInfo") !== null && email === JSON.parse(localStorage.getItem("userInfo")).email){
+    if(localStorage.getItem("userInfo") != null && email == JSON.parse(localStorage.getItem("userInfo")).email){
         alert("Email already exists!");
         return false;
     }
 
-    if(localStorage.getItem("userInfo") !== null && userName === JSON.parse(localStorage.getItem("userInfo")).username){
+    if(localStorage.getItem("userInfo") != null && userName == JSON.parse(localStorage.getItem("userInfo")).username){
         alert("User name already exists!");
         return false;
     }
