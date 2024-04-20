@@ -1,5 +1,6 @@
 .container {
   position: absolute;
+  margin: 5%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -8,10 +9,6 @@
   border-radius: 10px;
   padding: 30px;
   background-color: #DDD;
-}
-
-.nav_bar {
-  margin: -8px;
 }
 
 .container header {
