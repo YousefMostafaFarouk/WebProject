@@ -27,7 +27,7 @@ function validateForm(){
     }
 
     console.log("here");
-    if(confirmPassword != password){
+    if(confirmPassword !== password){
         alert("Password Doesn't match!")
         return false;
     }
@@ -43,18 +43,18 @@ function validateForm(){
         return false;
     }
 
-    var usernameRegex = /^[a-zA-Z\d][\w\d]*$/;
+    var usernameRegex = /^[a-zA-Z][\w\d]*$/;
     if(!usernameRegex.test(userName)){
         alert("User name can't contain numbers in the start and can't contain special characters!")
         return false;
     }
 
-    if(localStorage.getItem("userInfo") != null && email == JSON.parse(localStorage.getItem("userInfo")).email){
+    if(localStorage.getItem("userInfo") !== null && email === JSON.parse(localStorage.getItem("userInfo")).email){
         alert("Email already exists!");
         return false;
     }
 
-    if(localStorage.getItem("userInfo") != null && userName == JSON.parse(localStorage.getItem("userInfo")).username){
+    if(localStorage.getItem("userInfo") !== null && userName === JSON.parse(localStorage.getItem("userInfo")).username){
         alert("User name already exists!");
         return false;
     }

@@ -11,12 +11,10 @@ function validateForm(){
     console.log(userName);
     console.log(password);
     
-    if(userInfo.username == userName && userInfo.password == password){
+    if(userInfo.username === userName && userInfo.password === password){
         alert("Logged in!");
-
         localStorage.setItem("loggedIn", JSON.stringify(true));
         return true;
-
     }
     
     alert("User doesn't exist");
@@ -29,7 +27,6 @@ document.addEventListener("DOMContentLoaded",function(){
     
     form.addEventListener("submit", function(event){
         event.preventDefault();
-
         if(validateForm()){
             window.location.href = "index.html";
         }
