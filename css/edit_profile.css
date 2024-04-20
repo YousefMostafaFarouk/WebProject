@@ -2,15 +2,12 @@ body {
   background-color: #f6f1de;
 }
 .container {
-  position: absolute;
-  margin: 0%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 700px;
   width: 100%;
+  max-width: 700px;
+  padding: 20px;
+  margin: 50px auto;
+  box-sizing: border-box;
   border-radius: 10px;
-  padding: 30px;
   background-color: #B6AD90;
 }
 
