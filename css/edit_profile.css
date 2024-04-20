@@ -1,14 +1,15 @@
 body {
   background-color: #f6f1de;
 }
+
 .container {
   width: 100%;
   max-width: 700px;
   padding: 20px;
-  margin: 50px auto;
+  margin: 100px auto;
   box-sizing: border-box;
-  border-radius: 10px;
   background-color: #B6AD90;
+  border-radius: 10px;
 }
 
 .container header {
