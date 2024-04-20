@@ -1,62 +1,97 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>EgyBooks</title>
-        <link rel="icon" type="image/png" href="pics/web_icon.png">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="javascript/navBar.js"></script>
+      <link rel="icon" type="image/png" href="pics/web_icon.png">
+      <link rel="stylesheet" href="css/core.css">
+      <link rel="stylesheet" href="css/nav_bar.css">
+      <link rel="stylesheet" href="css/profile_styles.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Permanent+Marker&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+      <title>EgyBooks</title>
     </head>
     <body>
-      
-    <!--Nav bar-->
-    <a class="active" href="Login.html">Login</a>
-    <span>/</span>
-    <a href="Signup.html">Sign Up</a>
-    <a href="index.html">Home</a>
-    <a href="About.html">About Us</a>
-    <a href="ViewBooks.html">View all</a>
-    <a href="BorrowBook.html">Borrow Book</a>
-    <a href="AddBook.html">Add Book</a>
-    <a href ="Profile.html">Profile</a>
 
-    <!--Search bar-->
-    <form action="search" method="GET">
-        <input type="text" name="search" placeholder="Search">
-        <select name="filter">
-            <option value="title">Title</option>
-            <option value="author">Author</option>
-            <option value="category">Category</option>
-        </select>
-        <button type="submit">Search</button>
-    </form>
-        <h1>Profile</h1>
-        <div>
-            <p>Username: Book lover</p>
-            <p>Email: admin@example.com</p>
-            <p>Password: 1234</p>
-            <h3>Account Type:</h3>
-            <select id="Account Type">
-              <option value="Admin">Admin</option>
-              <option value="User">User</option>
-            </select>
-        </div>
-        
-        <div>
-                <h3>Borrowed Books:</h3>
-                <form action="BookPage.html" method="GET">
-                  <select name="book">
-                    <option value="clean_code">Clean Code</option>
-                  </select>
-                  <input type="submit" value="View Book">
-                </form>
+        <div class = "nav_bar">
+          <div class="nav_bar_actions">
+              <img class = "nav_bar_icon" src="pics/web_icon.png">
+              <div class = "left_buttons">
+                  <ul id="login_button" class="nav_bar_button"><a href="Login.html">Login</a></ul>
+                  <ul id="signup_button" class="nav_bar_button"><a href="Signup.html">Sign Up</a></ul>
+              </div>
+              <div class="center_buttons">
+                  <ul id="index_button" class="nav_bar_button"><a href="index.html">Home</a></ul>
+                  <ul id="viewall_button" class="nav_bar_button"><a href="ViewBooks.html">View all</a></ul>
+                  <ul id="borrow_book_button" class="nav_bar_button"><a href="BorrowBook.html">Borrow Book</a></ul>
+                  <ul id="add_book_button" class="nav_bar_button"><a href="AddBook.html">Add Book</a></ul>
+              </div>
+              <div class ="right_buttons">
+                  <ul id="profile_button" class="nav_bar_button"><a href="Profile.html">Profile</a></ul>
+                  <ul id="aboutus_button" class="nav_bar_button"><a href="About.html">About Us</a></ul>
+              </div>
+          </div>
+      </div>
+    
+      <div class="profile-container">
+        <h1 id="profile-h1">My profile</h1>
+
+        <div class="profile-info">
+          <div class="profile-icon">
+            <img src="pics/profile_icon.png" alt="profile picture">
+          </div>
+
+          <div class="acc-info">
+              <h2 id="profile-h2">Account info</h2>
+              
+              <div class="info-item">
+                <span class="info-label">Username</span> <span class="info-data">Book lover</span>
+              </div>
+
+              <br>
+
+              <div class="info-item">
+                <span class="info-label">Email</span> <span class="info-data">admin@example.com</span>
+              </div>
+
+              <br>
+
+              <div class="info-item">
+                <span class="info-label">Password</span> <span class="info-data">Admin1234</span>
+              </div>
+
+              <br>
+
+              <div class="info-item">
+                <span class="info-label">Account Type</span> <span class="info-data">Admin</span>
+              </div>
+
+          </div>
+          
         </div>
 
         <br>
 
-        <div>
-          <a href="EditProfile.html">
-            <img src="pics/EditProfilePic.png" width="50" height="50" title="Edit Profile" alt="Edit Profile">
-          </a>
+        <div class="borrowed-books">
+            <h3 id="profile-h3">Borrowed Books</h3>
+            <ul>
+              <li>Clean Code <a href="BookPage.html">View Book</a></li>
+            </ul>
         </div>
+
+        <br>
+
+        <div class="edit-profile">
+          <a href="EditProfile.html">Edit Profile</a>
+        </div>
+      </div>
     </body>
 </html>
