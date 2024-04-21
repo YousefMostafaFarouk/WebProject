@@ -35,8 +35,6 @@ body {
 .profile-container {
     width: 100%;
     max-width: 1000px;
-    height: 900px;
-    max-height: 1200px;
     border-radius: 5px;
     background-color: #B6AD90;
     padding: 30px;
