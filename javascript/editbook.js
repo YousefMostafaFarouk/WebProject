@@ -104,6 +104,29 @@ document.addEventListener("DOMContentLoaded", function(){
             var price = document.getElementById('price').value;
             var numberofcopies = document.getElementById('numberofcopies').value;
 
+            var titleRegex = /^[a-zA-Z][\w\d]*$/;
+            if(!titleRegex.test(title)){
+                alert("Title can't contain numbers in the start and can't contain special characters!");
+                return false;
+            }
+
+            if(!titleRegex.test(author)){
+                alert("author can't contain numbers in the start and can't contain special characters!");
+                return false;
+            }
+
+            var categoryRegex = /^[a-zA-Z][a-zA-Z]*$/
+            if(!categoryRegex.test(category)){
+                alert("Category can't contain numbers in the start and can't contain special characters!");
+                return false;
+            }
+
+            var idRegex = /^[0-9]+$/;
+            if(!idRegex.test(bookID)){
+                alert("ID must be numbers only");
+                return false;
+            }
+
             const bookData = {
                 image: imageDataUrl,
                 title: title,
