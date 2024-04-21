@@ -5,11 +5,10 @@ body {
   padding: 20px;
   margin: 100px auto;
   box-sizing: border-box;
-  left: 50%;
   max-width: 900px;
   width: 100%;
   border-radius: 10px;
-  background-color: #B6AD90;
+  background-color: #B6AD90
 }
 * {
   font-family: "Shadow Into Light", cursive;
@@ -52,12 +51,6 @@ form .fields .inputField {
   width: calc(100% / 3 - 15px);
   flex-direction: column;
   margin: 4px 0;
-}
-
-.inputField label, .inputFieldli label {
-  font-size: 18px;
-  font-weight: 500;
-  color: #7F4F24;
 }
 
 .inputField input {
@@ -113,20 +106,4 @@ input[type=reset] {
   cursor: pointer;
   float: right;
   margin-top: 21px;
-}
-
-form .fields .inputFieldli {
-  float: left;
-  width: 50%;
-  padding: 0px;
-  margin-top: 6px;
-}
-
-
-select {
-  height: 42px;
-  font-size: 14px;
-  border: 1px solid #aaa;
-  border-radius: 5px;
-  margin: 8px 0;
 }
