@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function(){
             var pages = document.getElementById('numberofpages').value;
             var description = document.getElementById('description').value;
             var price = document.getElementById('price').value;
+            var numberofcopies = document.getElementById('numberofcopies').value;
 
 
             var titleRegex = /^[a-zA-Z][\w\d]*$/;
@@ -66,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 pages: pages,
                 description: description,
                 price: price,
-                numberofcopies:1
+                numberofcopies:numberofcopies
             };
 
             saveBookData(bookData);
@@ -83,7 +84,7 @@ function saveBookData(bookData) {
     var isexist=false;
     libraryBooks.forEach(function (book) {
         if(book.bookID==bookData.bookID){
-            book.numberofcopies +=1;
+            book.numberofcopies +=bookData.numberofcopies;
             console.log(book.numberofcopies);
             isexist=true;
         }

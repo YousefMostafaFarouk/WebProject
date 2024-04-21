@@ -53,7 +53,7 @@
 
         <div class="form_group">
             <label class = "subtitle" for="image">choose photo for the book</label>
-            <input type="file" id="image" accept="image/*"><br><br>
+            <input type="file" id="image" accept="image/*" required><br><br>
         </div>
 
         <div class="form_group">
@@ -78,17 +78,23 @@
 
         <div class="form_group">
             <label class = "subtitle" for="numberofpages">number of pages</label>
-            <input class="form_style" type="number" id="numberofpages" min="0" max="100000" required><br><br>
+            <input class="form_style" type="number" id="numberofpages" required><br><br>
         </div>
 
         <div class="form_group">
             <label class = "subtitle" for="description">description</label>
-            <textarea id="description" placeholder="Write a description..."></textarea><br><br>
+            <textarea id="description" placeholder="Write a description..." required></textarea><br><br>
 
         </div>
+
         <div class="form_group">
             <label class = "subtitle" for="price">Price</label>
-            <input class="form_style" type="number" id="price" min="0" max="10000" required><br><br>
+            <input class="form_style" type="number" id="price"  required><br><br>
+        </div>
+
+        <div class="form_group">
+            <label class = "subtitle" for="numberofcopies">Number of copies</label>
+            <input class="form_style" type="number" id="numberofcopies"  required><br><br>
         </div>
 
 
