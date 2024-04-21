@@ -79,8 +79,8 @@ document.addEventListener("DOMContentLoaded", function(){
             console.log("Password:", password);
             console.log("Email:", email);
             console.log("Account Type:", accountType);
-            window.location.href = "EditProfile.html";
-            alert("Profile Data Updated !");
+            window.location.href = "profile.html";
+            alert("Profile Data Updated!");
         }
     })
 });
