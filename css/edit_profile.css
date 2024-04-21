@@ -1,6 +1,9 @@
 body {
   background-color: #f6f1de;
 }
+* {
+  font-family: "Shadow Into Light", cursive;
+}
 
 .container {
   width: 100%;
@@ -15,6 +18,7 @@ body {
 .container header {
   font-size: 25px;
   font-weight: 600;
+  color: #582F0E;
 }
 
 .container form {
@@ -52,19 +56,25 @@ form .fields .inputField {
 .inputField label {
   font-size: 18px;
   font-weight: 500;
-  color: #2e2e2e;
+  color: #7F4F24;
 }
 
 .inputField input {
   outline: none;
   font-weight: 400;
-  color: #333;
   font-size: 14px;
-  border: 1px solid #aaa;
+  border: 3px solid #b9bea6;
+  background-color: #f2f4eb;
   border-radius: 5px;
   padding: 0 15px;
   height: 42px;
   margin: 8px 0;
+}
+
+.inputField input:hover {
+  background-color: #fff;
+  border: 3px solid #b9bea6;
+  outline: 3px solid #582F0E;
 }
 
 .inputField input:is(:focus, :valid) {
@@ -72,7 +82,7 @@ form .fields .inputField {
 }
 
 input[type=submit] {
-  background-color: rgb(53, 53, 53);
+  background-color: #582F0E;
   color: white;
   padding: 12px 111px;
   border-radius: 5px;
@@ -82,7 +92,7 @@ input[type=submit] {
 }
 
 input[type=reset] {
-  background-color: rgb(53, 53, 53);
+  background-color: #582F0E;
   color: white;
   padding: 12px 111px;
   border-radius: 5px;
@@ -90,7 +100,3 @@ input[type=reset] {
   float: right;
   margin-top: 21px;
 }
-* {
-    font-family: "Shadow Into Light", cursive;
-}
-
