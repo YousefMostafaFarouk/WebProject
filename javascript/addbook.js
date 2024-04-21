@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function(){
             var title = document.getElementById('nameofthebook').value;
             var bookID = document.getElementById('bookID').value;
             var author = document.getElementById('author').value;
+            var category = document.getElementById('category').value;
             var pages = document.getElementById('numberofpages').value;
             var description = document.getElementById('description').value;
             var price = document.getElementById('price').value;
@@ -37,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 title: title,
                 bookID: bookID,
                 author: author,
+                category:category,
                 pages: pages,
                 description: description,
                 price: price,
