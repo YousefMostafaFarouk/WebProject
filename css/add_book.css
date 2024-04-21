@@ -14,6 +14,9 @@
     font-size: 32px;
 
 }
+* {
+    font-family: "Shadow Into Light", cursive;
+}
 
 .subtitle{
     color: #582F0E;
