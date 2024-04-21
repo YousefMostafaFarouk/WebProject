@@ -1,6 +1,6 @@
-
 var accountType = JSON.parse(localStorage.getItem('userInfo')).account_type;
 var loggedIn = JSON.parse(localStorage.getItem('loggedIn'));
+
 function getUrlParameter(name) {
     const params = new URLSearchParams(window.location.search);
     console.log(params.get(name));
@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", function(){
     if(accountType == "User" || !loggedIn){
         document.getElementById("del").style.display= "none";
         document.getElementById("edit").style.display= "none";
+    }
+    if(!loggedIn){
+        document.getElementById("borrow").style.display = "none";
     }
     var books= [];
     if (storedBooks) {
@@ -36,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function(){
 function btns(id){
     return `
             <div>
-                <button class="borrow"><a class="btnword" href="BorrowBook.html" target="_blanc">Borrow</a></button>
+                <button class="borrow" id="borrow"><a class="btnword" href="BorrowBook.html" target="_blanc">Borrow</a></button>
                 <button class="edit" id="edit"><a class="btnword" href="EditBook.html?id=${id}" target="_blanc">Edit</a></button>
                 <input class="delete" id="del" type="button" value="Delete">
             </div>
