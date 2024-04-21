@@ -90,3 +90,7 @@ input[type=reset] {
   float: right;
   margin-top: 21px;
 }
+* {
+    font-family: "Shadow Into Light", cursive;
+}
+
