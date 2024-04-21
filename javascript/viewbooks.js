@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", function(){
     var books = getBooksData();
-
+    console.log(books);
     var container = document.getElementById("all_books");
     console.log(container);
 
