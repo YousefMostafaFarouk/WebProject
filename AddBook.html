@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="javascript/navBar.js"></script>
+    <script src="javascript/addbook.js"></script>
     <link rel="icon" type="image/png" href="pics/web_icon.png">
     <link rel="stylesheet" href="css/core.css">
     <link rel="stylesheet" href="css/nav_bar.css">
@@ -64,18 +65,23 @@
         </div>
     </div>
 
-    <form class ="add_book_class" method="GET">
+    <form class ="add_book_class" id = "addBookForm" method="GET">
 
         <p class="title">Add Book</p>
 
         <div class="form_group">
-            <label class = "subtitle" for="file_input">choose photo for the book</label>
-            <input type="file" id="file_input" accept="image/*"><br><br>
+            <label class = "subtitle" for="image">choose photo for the book</label>
+            <input type="file" id="image" accept="image/*"><br><br>
         </div>
 
         <div class="form_group">
             <label class = "subtitle" for="nameofthebook">name of the book</label>
             <input class="form_style" type="text" id="nameofthebook"><br><br>
+        </div>
+
+        <div class="form_group">
+            <label class = "subtitle" for="bookID">book ID</label>
+            <input class="form_style" type="text" id="bookID"><br><br>
         </div>
 
         <div class="form_group">
