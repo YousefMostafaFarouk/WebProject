@@ -5,7 +5,10 @@ document.addEventListener("DOMContentLoaded",function(){
     var navigationBarLeftButtons = document.getElementsByClassName("left_buttons")[0];
     if(loggedin === false){
         var profileButton = document.getElementById("profile_button");
+        var borrowBookButton = document.getElementById("borrow_book_button");
+        borrowBookButton.remove();
         profileButton.remove();
+
     }
     
     if(loggedin === true){
