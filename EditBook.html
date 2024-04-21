@@ -2,84 +2,57 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="javascript/navBar.js"></script>
+    <script src="javascript/editbook.js"></script>
     <link rel="icon" type="image/png" href="pics/web_icon.png">
-    <title>The Redshirt | EgyBooks</title>
+    <link rel="stylesheet" href="css/core.css">
+    <link rel="stylesheet" href="css/nav_bar.css">
+    <link rel="stylesheet" href="css/search_bar.css">
+    <link rel = "stylesheet" href="css/introtext.css">
+    <link rel = "stylesheet" href="css/add_book.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Permanent+Marker&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="pics/web_icon.png">
+    <title>EgyBooks | Add book</title>
 </head>
 
 <body>
+    <div class = "nav_bar">
+        <div class="nav_bar_actions">
+            <img class = "nav_bar_icon" src="pics/web_icon.png">
+            <div class = "left_buttons">
+                <ul id="login_button" class="nav_bar_button"><a href="Login.html">Login</a></ul>
+                <ul id="signup_button" class="nav_bar_button"><a href="Signup.html">Sign Up</a></ul>
+            </div>
+            <div class="center_buttons">
+                <ul id="index_button" class="nav_bar_button"><a href="index.html">Home</a></ul>
+                <ul id="viewall_button" class="nav_bar_button"><a href="ViewBooks.html">View all</a></ul>
+                <ul id="borrow_book_button" class="nav_bar_button"><a href="BorrowBook.html">Borrow Book</a></ul>
+                <ul id="add_book_button" class="nav_bar_button"><a href="AddBook.html">Add Book</a></ul>
+            </div>
+            <div class ="right_buttons">
+                <ul id="profile_button" class="nav_bar_button"><a href="Profile.html">Profile</a></ul>
+                <ul id="aboutus_button" class="nav_bar_button"><a href="About.html">About Us</a></ul>
+            </div>
+        </div>
+    </div>
+  
 
-    <!--Nav bar-->
-    <a class="active" href="Login.html">Login</a>
-    <span>/</span>
-    <a href="Signup.html">Sign Up</a>
-    <a href="index.html">Home</a>
-    <a href="About.html">About Us</a>
-    <a href="ViewBooks.html">View all</a>
-    <a href="BorrowBook.html">Borrow Book</a>
-    <a href="AddBook.html">Add Book</a>
-    <a href ="Profile.html">Profile</a>
+    <form class ="add_book_class" id = "editBookForm" method="GET">
 
-    <!--Search bar-->
-    <form action="search" method="GET">
-        <input type="text" name="search" placeholder="Search">
-        <select name="filter">
-            <option value="title">Title</option>
-            <option value="author">Author</option>
-            <option value="category">Category</option>
-        </select>
-        <button type="submit">Search</button>
+        <p class="title">Edit Book</p>
+
+        
     </form>
-    
-    <hr></hr>
-
-    <label for="file_input">Edit photo for the book</label><br><br>
-        <input type="file" id="file_input" accept="image/*"><br><br>
-
-    <form action="edit_name" method="GET">
-        <input type="text" name="Name" placeholder="Edit Name">
-    </form>
-
-    <form action="edit_category" method="GET">
-        <input type="text" name="Category" placeholder="Edit Category">
-    </form>
-
-    <form action="edit_author_name" method="GET">
-        <input type="text" name="Author Name" placeholder="Edit Author Name">
-    </form>
-
-    <br><br>
-    <label for="Description">Description:</label><br><br>
-        <textarea id="description" placeholder="Write a description..." rows="20" cols="50"></textarea><br><br>
-
-    <label for="About Book">About Book:</label><br><br>
-
-    <form action="edit_edition" method="GET">
-        <input type="text" name="Edition" placeholder="Edit Edition">
-    </form>
-
-    <form action="edit_publisher" method="GET">
-        <input type="text" name="Author Name" placeholder="Edit Author Name">
-    </form>
-
-    <form action="edit_number_of_pages" method="GET">
-        <input type="text" name="Author Name" placeholder="Edit Author Name">
-    </form>
-
-    <form action="edit_code" method="GET">
-        <input type="text" name="Author Name" placeholder="Edit Author Name">
-    </form>
-
-    <form action="edit_author_name" method="GET">
-        <input type="text" name="Author Name" placeholder="Edit Author Name">
-    </form>
-
-    <br><br>
-    <label for="About Author">About Author:</label><br><br>
-        <textarea id="author_description" placeholder="Write a description..." rows="20" cols="50"></textarea><br><br>
-
-    <input type="button" onclick="alert('Are you sure you want to delete this book?')" value="Delete Book">
 </body>
 
 </html>
