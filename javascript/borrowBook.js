@@ -97,7 +97,7 @@ function validateForm(libraryBooks) {
 
         var borrowedBooksString = localStorage.getItem("BorrowedBooks");
         var borrowedBooks = borrowedBooksString ? JSON.parse(borrowedBooksString) : [];
-        borrowedBooks.push({ bookID: bookID, bookTitle: bookTitle });
+        borrowedBooks.push({ bookID: bookID, bookTitle: bookTitle, quantity: formData.quantity });
         localStorage.setItem("BorrowedBooks", JSON.stringify(borrowedBooks));
 
         return true;
