@@ -18,6 +18,9 @@
     overflow: hidden;
     margin: 20px;
 }
+* {
+    font-family: "Shadow Into Light", cursive;
+}
 
 .book_block:hover {
     width: 210px;
