@@ -52,7 +52,7 @@ function validateForm(){
         username: newUserName,
         password: newPassword,
         email: newEmail,
-        account_type: accountType
+        account_type: JSON.parse(userInfoString).account_type
     };
 
     localStorage.setItem("userInfo", JSON.stringify(userInfo));
