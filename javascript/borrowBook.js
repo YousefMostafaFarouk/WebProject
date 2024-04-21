@@ -1,4 +1,5 @@
 var LibraryBooks = JSON.parse(localStorage.getItem('libraryBooks'));
+var FoundedBook;
 
 function checkAvailability() {
     try {
@@ -19,8 +20,8 @@ function checkAvailability() {
                 LibraryBooks[bookData].numberofcopies >= Quantity && 
                 LibraryBooks[bookData].title == BookTitle) {
 
+                FoundedBook = LibraryBooks[bookData];
                 alert("Book Found !!!");
-                LibraryBooks[bookData].numberofcopies -= Quantity;
                 test = 1;
                 break;
 
@@ -41,9 +42,10 @@ function checkAvailability() {
 
 }
 
-
 function validateForm() {
     try {
+        LibraryBooks[FoundedBook].numberofcopies -= Quantity;
+
         var FirstName = document.getElementById("f_name").value;
         var MiddleName = document.getElementById("m_name").value;
         var LastName = document.getElementById("l_name").value;
