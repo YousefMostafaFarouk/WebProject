@@ -5,10 +5,11 @@ function getUrlParameter(name) {
     var results = regex.exec(location.search);
     return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
 }
-
+document.addEventListener("DOMContentLoaded", function(){
 var container = document.getElementById("Book");
 var storedBooks = localStorage.getItem('libraryBooks');
 var id = getUrlParameter('id');
+document.getElementById("Btns").innerHTML = btns();
 var books= [];
 if (storedBooks) {
     books = JSON.parse(storedBooks);
@@ -18,7 +19,23 @@ books.forEach(function (book) {
         container.innerHTML += bookdefinition(book);
     }
 });
-
+});
+function btns(id){
+    return `
+            <div>
+                <button class="borrow"><a class="btnword" href="BorrowBook.html" target="_blanc">Borrow</a></button>
+                <button class="edit"><a class="btnword" href="EditBook.html?id=${id}" target="_blanc">Edit</a></button>
+                <input class="delete" type="button" onclick="alert('Are you sure you want to delete this book?')" value="Delete">
+            </div>
+            <div>
+                <h3 class="commentword">Share your Opinion</h3>
+                <textarea class="commentbox" placeholder="Put you Comment here!"></textarea>
+            </div>
+            <div>
+                <button class="commentbtn">Comment</button>
+            </div>
+            `
+}
 function bookdefinition(book){
     return ` 
         <div>
