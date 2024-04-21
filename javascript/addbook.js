@@ -69,5 +69,6 @@ function saveBookData(bookData) {
     localStorage.setItem('libraryBooks', JSON.stringify(libraryBooks));
 
     alert('Book added successfully!');
+    window.location.href = "ViewBooks.html";
 }
 
