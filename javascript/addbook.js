@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 numberofcopies:1
             };
 
-            saveBookData2(bookData);
+            saveBookData(bookData);
         };
 
         reader.readAsDataURL(imageFile);
