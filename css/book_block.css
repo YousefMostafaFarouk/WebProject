@@ -17,6 +17,9 @@
     overflow: hidden;
     margin: 20px;
 }
+* {
+    font-family: "Shadow Into Light", cursive;
+}
 
 .book_link {
     text-decoration: none;
