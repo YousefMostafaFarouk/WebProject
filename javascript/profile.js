@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     borrowedBooks.forEach(function(book) {
         var listItem = document.createElement("li");
-        listItem.textContent = `Book Title: ${book.bookTitle} - Book ID: ${book.bookID}`;
+        listItem.textContent = `Book Title: ${book.bookTitle} - Book ID: ${book.bookID} - Quantity: ${book.quantity}`;
         borrowedBooksList.appendChild(listItem);
     });
 });
