@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
         var reader = new FileReader();
         reader.onload = function(event) {
-            var imageDataUrl = event.target.result; // Get the data URL representing the image
+            var imageDataUrl = event.target.result;
 
-            var name = document.getElementById('nameofthebook').value;
+            var title = document.getElementById('nameofthebook').value;
             var bookID = document.getElementById('bookID').value;
             var author = document.getElementById('author').value;
             var pages = document.getElementById('numberofpages').value;
@@ -33,8 +33,8 @@ document.addEventListener("DOMContentLoaded", function(){
             var price = document.getElementById('price').value;
 
             const bookData = {
-                image: imageDataUrl, // Use the image data URL
-                name: name,
+                image: imageDataUrl,
+                title: title,
                 bookID: bookID,
                 author: author,
                 pages: pages,
@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function(){
             saveBookData(bookData);
         };
 
-        // Read the image file as a data URL
         reader.readAsDataURL(imageFile);
 
 
