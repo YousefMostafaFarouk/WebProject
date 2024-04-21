@@ -1,6 +1,6 @@
 body{
-    background-color: rgba(194, 197, 170,0.7) ;
-    color: black;
+    background-color: #f6f1de;
+    color: #582F0E;
 }
 
 .book{
@@ -9,7 +9,6 @@ body{
 
 .bookimg{
     height: 80vh;
-    width: 60wh;
     margin: 0vh 3vw 2vh 3vw;
     border-radius: 15px;
 }
@@ -17,11 +16,10 @@ body{
     font-family: "Shadow Into Light", cursive;
 }
 
-
 .bookdef{
-    background-color: rgba(101, 109, 74, 0.7);
+    background-color: #B6AD90;
     border-radius: 30px;
-    border-style: dashed;
+    border-style: solid;
     padding: 3vh 3vw;
     margin: 3vh 3vw;
 }
@@ -55,34 +53,45 @@ p {
 }
 
 .borrow{
-    background-color: rgba(101, 109, 74, 0.7);
+    background-color: #B6AD90;;
     margin: 0vh 3vw 3.75vh 5vw;
     padding: 1.25vh 2vw 1.25vh 1.5vw;
     border-radius: 10px;
     width: 100px;
+    text-align: center;
+}
+.borrow a {
+    text-decoration: none;
 }
 
 .edit{
-    background-color: rgba(101, 109, 74, 0.7);
+    background-color: #B6AD90;;
     margin: 0vh 3vw 3.75vh 0.8vw;
     padding: 1.25vh 2vw 1.25vh 2vw;
     border-radius: 10px;
     width: 100px;
+    text-align: center;
+}
+
+.edit a {
+    text-decoration: none;
 }
 
 .delete{
-    background-color: rgba(101, 109, 74, 0.7);
+    background-color: #B6AD90;;
     margin: 0vh 0vw 3.75vh 0vw;
     padding: 1.25vh 2vw 1.25vh 1.75vw;
     border-radius: 10px;
-    color: black;
+    color: #582F0E;
     font-size: 15px;
     font-weight: bold;
     width: 100px;
+    text-align: center;
 }
 
 .btnword{
-    color: black;
+    background-color: #B6AD90;;
+    color: #582F0E;
     font-size: 15px;
     font-weight: bold;
 }
@@ -95,14 +104,16 @@ p {
     margin-top: 1.25vh;
     margin-left: 10vw;
     width: 40vw;
+    resize: none;
 }
 
 .commentbtn{
-    background-color: rgba(101, 109, 74, 0.7);
+    background-color: #B6AD90;;
     margin: 3.75vh 1.5vw 3.75vh 3vw;
     padding: 1.25vh 6vw 1.25vh 1.5vw;
     border-radius: 10px;
-    color: black;
+    color: #582F0E;
+    background-color: #B6AD90;;
     font-size: 15px;
     font-weight: bold;
     width: 5vw;
