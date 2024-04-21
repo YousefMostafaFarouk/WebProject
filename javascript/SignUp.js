@@ -43,6 +43,18 @@ function validateForm(){
         return false;
     }
 
+
+    if(password.length >= 30){
+        alert("The password must be smaller than 30 characters!")
+        return false;
+    }
+
+
+    if(userName.length >= 20){
+        alert("The username must be smaller than 20 characters!")
+        return false;
+    }
+
     var usernameRegex = /^[a-zA-Z][\w\d]*$/;
     if(!usernameRegex.test(userName)){
         alert("User name can't contain numbers in the start and can't contain special characters!")
