@@ -1,4 +1,4 @@
-var LibraryBooks = JSON.parse(localStorage.getItem('LibraryBooks'));
+var LibraryBooks = JSON.parse(localStorage.getItem('libraryBooks'));
 
 function checkAvailability() {
     try {
@@ -31,7 +31,7 @@ function checkAvailability() {
             alert("Invalid Input For Book Details !!!");
         }
 
-        localStorage.setItem('LibraryBooks', JSON.stringify(LibraryBooks));
+        localStorage.setItem('libraryBooks', JSON.stringify(LibraryBooks));
 
     } 
 

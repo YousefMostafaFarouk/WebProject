@@ -7,7 +7,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
     books.forEach(function (book) {
         console.log(book);
-        container.innerHTML+= generateBookHTML(book);
+        if(book.numberofcopies>0)
+            container.innerHTML+= generateBookHTML(book);
     });
 })
 

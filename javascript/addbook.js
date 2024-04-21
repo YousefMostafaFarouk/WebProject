@@ -39,10 +39,11 @@ document.addEventListener("DOMContentLoaded", function(){
                 author: author,
                 pages: pages,
                 description: description,
-                price: price
+                price: price,
+                numberofcopies:1
             };
 
-            saveBookData(bookData);
+            saveBookData2(bookData);
         };
 
         reader.readAsDataURL(imageFile);
@@ -53,8 +54,18 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 function saveBookData(bookData) {
-    libraryBooks.push(bookData);
+    var isexist=false;
+    libraryBooks.forEach(function (book) {
+        if(book.bookID==bookData.bookID){
+            book.numberofcopies +=1;
+            console.log(book.numberofcopies);
+            isexist=true;
+        }
+    });
+    if(!isexist)
+        libraryBooks.push(bookData);
     localStorage.setItem('libraryBooks', JSON.stringify(libraryBooks));
 
     alert('Book added successfully!');
 }
+
