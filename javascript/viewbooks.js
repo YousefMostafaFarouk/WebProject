@@ -17,7 +17,7 @@ function generateBookHTML(book) {
             <a href="BookPage.html?id=${book.bookID}" class="book_link">
                 <img src="${book.image}" alt="Book Cover" class="book_image">
                 <div class="book_details">
-                    <h2 class="book_title">${book.name}</h2>
+                    <h2 class="book_title">${book.title}</h2>
                     <p class="book_author">${book.author}</p>
                     <p class="book_price">${book.price}$</p>
                 </div>

@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function(){
     console.log(books);
     books.forEach(function (book) {
         if(book.bookID==id){
-            console.log(book.name);
             container.innerHTML += generateBookFormHTML(book);
         }
     });
@@ -31,7 +30,7 @@ function generateBookFormHTML(book){
 
         <div class="form_group">
             <label class = "subtitle" for="nameofthebook">name of the book</label>
-            <input class="form_style" value = "${book.name}" type="text" id="nameofthebook"><br><br>
+            <input class="form_style" value = "${book.title}" type="text" id="nameofthebook"><br><br>
         </div>
 
         <div class="form_group">
