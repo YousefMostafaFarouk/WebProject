@@ -3,10 +3,10 @@ var userInfoString = localStorage.getItem("userInfo");
 function validateForm(){
 
     try{
-      var newUserName = document.getElementById("username").value;
-      var newPassword = document.getElementById("password").value;
-      var newConfirmPassword = document.getElementById("confirm_password").value;
-      var newEmail = document.getElementById("email").value;
+        var newUserName = document.getElementById("username").value;
+        var newPassword = document.getElementById("password").value;
+        var newConfirmPassword = document.getElementById("confirm_password").value;
+        var newEmail = document.getElementById("email").value;
     }
     catch(error){
         console.log(error)
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function(){
             console.log("Password:", password);
             console.log("Email:", email);
             console.log("Account Type:", accountType);
-            window.location.href = "profile.html";
+            window.location.href = "Profile.html";
             alert("Profile Data Updated!");
         }
     })
