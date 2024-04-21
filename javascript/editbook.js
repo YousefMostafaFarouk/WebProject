@@ -57,6 +57,6 @@ function generateBookFormHTML(book){
             <label class = "subtitle" for="price">Price</label>
             <input class="form_style" value = "${book.price}" type="number" id="price" min="0" max="10000" required><br><br>
         </div>
-        <input type="submit" value="Add Book" style="font-size:25px;border-radius: 5px;">
+        <input type="submit" value="Edit" style="font-size:25px;border-radius: 5px;">
     `
 }
