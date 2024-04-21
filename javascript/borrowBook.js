@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", function(){
-    const libraryBooks = JSON.parse(localStorage.getItem('libraryBooks')) || [];
+const libraryBooks = JSON.parse(localStorage.getItem('libraryBooks')) || [];
 
+document.addEventListener("DOMContentLoaded", function(){
     document.querySelector('.btn').addEventListener('click', function(event) {
         event.preventDefault();
         checkAvailability(libraryBooks);
@@ -19,26 +19,26 @@ document.addEventListener("DOMContentLoaded", function(){
 
 function checkAvailability(libraryBooks) {
     try {
-        const bookID = document.getElementById("bk_id").value;
-        const bookAuthor = document.getElementById("book_author").value;
-        const quantity = parseInt(document.getElementById("quan").value);
-        const bookTitle = document.getElementById("bk_tit").value;
+        var bookID = document.getElementById("bk_id").value;
+        var bookAuthor = document.getElementById("book_author").value;
+        var quantity = parseInt(document.getElementById("quan").value);
+        var bookTitle = document.getElementById("bk_tit").value;
 
         if (!libraryBooks.length) {
             alert('Library data not found in local storage');
             return;
         }
 
-        let foundBook = null;
+        var foundBook = null;
 
-        for (const bookData of libraryBooks) {
-            if (bookData.bookID === bookID && 
-                bookData.author === bookAuthor && 
-                bookData.numberofcopies >= quantity && 
-                bookData.title === bookTitle) {
-                foundBook = bookData;
-                alert("Book Found !!!");
-                break;
+        for (var bookData in libraryBooks) {
+            if (libraryBooks[bookData].bookID == bookID && 
+                libraryBooks[bookData].author == bookAuthor && 
+                libraryBooks[bookData].numberofcopies >= quantity && 
+                libraryBooks[bookData].title == bookTitle) {
+                    foundBook = bookData;
+                    alert("Book Found !!!");
+                    break;
             }
         }
 
@@ -53,26 +53,27 @@ function checkAvailability(libraryBooks) {
 
 function validateForm(libraryBooks) {
     try {
-        const bookID = document.getElementById("bk_id").value;
-        const bookAuthor = document.getElementById("book_author").value;
-        const quantity = parseInt(document.getElementById("quan").value); 
-        const bookTitle = document.getElementById("bk_tit").value;
+        var bookID = document.getElementById("bk_id").value;
+        var bookAuthor = document.getElementById("book_author").value;
+        var quantity = parseInt(document.getElementById("quan").value); 
+        var bookTitle = document.getElementById("bk_tit").value;
 
         if (!bookID || !bookAuthor || !quantity || !bookTitle) {
             alert("Please fill in all book details.");
             return false;
         }
 
-
-        for (const bookData of libraryBooks) {
-            if (bookData.bookID === bookID && 
-                bookData.author === bookAuthor && 
-                bookData.numberofcopies >= quantity && 
-                bookData.title === bookTitle) {
-                bookData.numberofcopies -= quantity;
-                break;
+        for (var bookData in libraryBooks) {
+            if (libraryBooks[bookData].bookID == bookID && 
+                libraryBooks[bookData].author == bookAuthor && 
+                libraryBooks[bookData].numberofcopies >= quantity && 
+                libraryBooks[bookData].title == bookTitle) {
+                    libraryBooks[bookData].numberofcopies -= quantity;
+                    break;
             }
         }
+
+        localStorage.setItem("libraryBooks",JSON.stringify(libraryBooks));
 
         const formData = {
             bookID,
@@ -89,7 +90,6 @@ function validateForm(libraryBooks) {
         };
 
         localStorage.setItem("FormData", JSON.stringify(formData));
-
 
         if (!localStorage.getItem("BorrowedBooks")) {
             localStorage.setItem("BorrowedBooks", JSON.stringify([]));
