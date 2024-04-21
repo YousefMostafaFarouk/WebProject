@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-
     var userInfoString = localStorage.getItem("userInfo");
     var userInfo = JSON.parse(userInfoString);
 
@@ -17,4 +16,18 @@ document.addEventListener("DOMContentLoaded", function() {
     emailElement.textContent = email;
     passwordElement.textContent = password;
     accountTypeElement.textContent = accountType;
+
+    if (!localStorage.getItem("BorrowedBooks")) {
+        localStorage.setItem("BorrowedBooks", JSON.stringify([]));
+    }
+
+    var borrowedBooksString = localStorage.getItem("BorrowedBooks");
+    var borrowedBooks = JSON.parse(borrowedBooksString);
+    var borrowedBooksList = document.getElementById("borrowed-books-list");
+
+    borrowedBooks.forEach(function(book) {
+        var listItem = document.createElement("li");
+        listItem.textContent = `Book Title: ${book.bookTitle} - Book ID: ${book.bookID}`;
+        borrowedBooksList.appendChild(listItem);
+    });
 });
