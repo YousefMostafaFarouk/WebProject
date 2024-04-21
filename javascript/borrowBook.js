@@ -25,8 +25,35 @@ function checkAvailability(libraryBooks) {
         var bookTitle = document.getElementById("bk_tit").value;
 
         if (!libraryBooks.length) {
-            alert('Library data not found in local storage');
+            alert('Library data not found in local storage !');
             return;
+        }
+
+        if(bookID.length < 5){
+            alert("Book ID Smaller Too Much (Minimum 5 Characters) !")
+            return false;
+        }
+
+        if(bookID.length > 10){
+            alert("Book ID Bigger Too Much (Maximum 10 Characters) !")
+            return false;
+        }
+
+        var authorRegex = /^[a-zA-Z][\w\d]*$/;
+        if(!authorRegex.test(bookAuthor)){
+            alert("Book Author can't contain numbers in the start and can't contain special characters!")
+            return false;
+        }
+
+        if (libraryBooks[bookData].numberofcopies < quantity) {
+            alert("Needed Quantity Greater Than Availble Copies !");
+            return false;
+        }
+
+        var bookTitleRegex = /^[a-zA-Z][\w\d]*$/;
+        if(!bookTitleRegex.test(bookTitle)){
+            alert("Book Title can't contain numbers in the start and can't contain special characters!")
+            return false;
         }
 
         var foundBook = null;
@@ -58,6 +85,15 @@ function validateForm(libraryBooks) {
         var quantity = parseInt(document.getElementById("quan").value); 
         var bookTitle = document.getElementById("bk_tit").value;
 
+        var firstName = document.getElementById("f_name").value;
+        var middleName = document.getElementById("m_name").value;
+        var lastame = document.getElementById("l_name").value;
+        var mail = document.getElementById("mail").value;
+        var phoneNumber = document.getElementById("ph_no").value;
+        var deliveryAddress = document.getElementById("add").value;
+        var deliveryDate = document.getElementById("delivered_date").value;
+
+
         if (!bookID || !bookAuthor || !quantity || !bookTitle) {
             alert("Please fill in all book details.");
             return false;
@@ -75,18 +111,65 @@ function validateForm(libraryBooks) {
 
         localStorage.setItem("libraryBooks",JSON.stringify(libraryBooks));
 
+        // ------------------------------------------------------------
+
+        if(firstName.length < 3){
+            alert("First Name Smaller Too Much (Minimum 3 Characters)")
+            return false;
+        }
+
+        if(firstName.length > 10){
+            alert("Frist Name Bigger Too Much (Maximum 10 Characters)")
+            return false;
+        }
+
+        if(middleName.length < 3){
+            alert("Middle Name Smaller Too Much (Minimum 3 Characters)")
+            return false;
+        }
+
+        if(middleName.length > 10){
+            alert("Middle Name Bigger Too Much (Maximum 10 Characters)")
+            return false;
+        }
+
+        if(lastame.length < 3){
+            alert("Last Name Smaller Too Much (Minimum 3 Characters)")
+            return false;
+        }
+
+        if(lastame.length > 10){
+            alert("Last Name Bigger Too Much (Maximum 10 Characters)")
+            return false;
+        }
+
+        if(phoneNumber.length < 10){
+            alert("Phone Number Smaller Too Much (Minimum 10 Characters)")
+            return false;
+        }
+
+        if(deliveryAddress.length < 8){
+            alert("Delivery Address Smaller Too Much (Minimum 8 Characters)")
+            return false;
+        }
+
+        if(deliveryAddress.length > 30){
+            alert("Delivery Address Bigger Too Much (Maximum 30 Characters)")
+            return false;
+        }
+
         const formData = {
             bookID,
             bookAuthor,
             quantity,
             bookTitle,
-            firstName: document.getElementById("f_name").value,
-            middleName: document.getElementById("m_name").value,
-            lastName: document.getElementById("l_name").value,
-            mail: document.getElementById("mail").value,
-            phoneNumber: document.getElementById("ph_no").value,
-            deliveryAddress: document.getElementById("add").value,
-            deliveryDate: document.getElementById("delivered_date").value
+            firstName: firstName,
+            middleName: middleName,
+            lastName: lastame,
+            mail: mail,
+            phoneNumber: phoneNumber,
+            deliveryAddress: deliveryAddress,
+            deliveryDate: deliveryDate
         };
 
         localStorage.setItem("FormData", JSON.stringify(formData));
