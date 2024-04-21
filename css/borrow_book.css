@@ -11,6 +11,9 @@ body {
   border-radius: 10px;
   background-color: #B6AD90;
 }
+* {
+    font-family: "Shadow Into Light", cursive;
+}
 
 .container header {
   font-size: 25px;
