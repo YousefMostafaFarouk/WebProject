@@ -12,12 +12,14 @@ body {
   background-color: #B6AD90;
 }
 * {
-    font-family: "Shadow Into Light", cursive;
+  font-family: "Shadow Into Light", cursive;
 }
+
 
 .container header {
   font-size: 25px;
   font-weight: 600;
+  color: #582F0E;
 }
 
 .container form {
@@ -35,6 +37,7 @@ body {
   font-size: 25px;
   font-weight: 500;
   margin: 6px 0;
+  color: #582F0E;
 }
 
 .container form .fields {
@@ -54,19 +57,26 @@ form .fields .inputField {
 .inputField label, .inputFieldli label {
   font-size: 18px;
   font-weight: 500;
-  color: #2e2e2e;
+  color: #7F4F24;
 }
 
 .inputField input {
   outline: none;
   font-weight: 400;
-  color: #333;
+  color: #7F4F24;
   font-size: 14px;
   border: 1px solid #aaa;
   border-radius: 5px;
   padding: 0 15px;
   height: 42px;
   margin: 8px 0;
+  background-color: #f2f4eb;
+}
+
+.inputField input:hover {
+  background-color: #fff;
+  border: 3px solid #b9bea6;
+  outline: 3px solid #582F0E;
 }
 
 .inputField input:is(:focus, :valid) {
@@ -74,9 +84,9 @@ form .fields .inputField {
 }
 
 .container .form .bookDetails .fields .avaCheck .btn {
-  background-color: rgb(53, 53, 53);
+  background-color: #582F0E;
   border: none;
-  color: white;
+  color: #e2ded0;
   padding: 20px 30px;
   font-size: 15px;
   margin: 14px 44px;
@@ -86,8 +96,8 @@ form .fields .inputField {
 }
 
 input[type=submit] {
-  background-color: rgb(53, 53, 53);
-  color: white;
+  background-color: #582F0E;
+  color: #e2ded0;
   padding: 12px 111px;
   border-radius: 5px;
   cursor: pointer;
@@ -96,8 +106,8 @@ input[type=submit] {
 }
 
 input[type=reset] {
-  background-color: rgb(53, 53, 53);
-  color: white;
+  background-color: #582F0E;
+  color: #e2ded0;
   padding: 12px 111px;
   border-radius: 5px;
   cursor: pointer;
