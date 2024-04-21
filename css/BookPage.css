@@ -13,6 +13,10 @@ body{
     margin: 0vh 3vw 2vh 3vw;
     border-radius: 15px;
 }
+* {
+    font-family: "Shadow Into Light", cursive;
+}
+
 
 .bookdef{
     background-color: rgba(101, 109, 74, 0.7);
