@@ -1,6 +1,16 @@
 const libraryBooks = JSON.parse(localStorage.getItem('libraryBooks')) || [];
 
 document.addEventListener("DOMContentLoaded", function(){
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get('id');
+    const title = params.get('title');
+    const author = params.get('author');
+
+    document.getElementById("bk_id").value = id;
+    document.getElementById("book_author").value = decodeURIComponent(author);
+    document.getElementById("quan").value = 1;
+    document.getElementById("bk_tit").value = decodeURIComponent(title);
+
     document.querySelector('.btn').addEventListener('click', function(event) {
         event.preventDefault();
         checkAvailability(libraryBooks);
@@ -28,49 +38,21 @@ function checkAvailability(libraryBooks) {
             alert('Library data not found in local storage !');
             return;
         }
-
-        if(bookID.length < 5){
-            alert("Book ID Smaller Too Much (Minimum 5 Characters) !")
-            return false;
-        }
-
-        if(bookID.length > 10){
-            alert("Book ID Bigger Too Much (Maximum 10 Characters) !")
-            return false;
-        }
-
-        var authorRegex = /^[a-zA-Z][\w\d]*$/;
-        if(!authorRegex.test(bookAuthor)){
-            alert("Book Author can't contain numbers in the start and can't contain special characters!")
-            return false;
-        }
-
-        if (libraryBooks[bookData].numberofcopies < quantity) {
-            alert("Needed Quantity Greater Than Availble Copies !");
-            return false;
-        }
-
-        var bookTitleRegex = /^[a-zA-Z][\w\d]*$/;
-        if(!bookTitleRegex.test(bookTitle)){
-            alert("Book Title can't contain numbers in the start and can't contain special characters!")
-            return false;
-        }
-
-        var foundBook = null;
+        var flag = false;
 
         for (var bookData in libraryBooks) {
             if (libraryBooks[bookData].bookID == bookID && 
                 libraryBooks[bookData].author == bookAuthor && 
                 libraryBooks[bookData].numberofcopies >= quantity && 
                 libraryBooks[bookData].title == bookTitle) {
-                    foundBook = bookData;
-                    alert("Book Found !!!");
+                    alert("Needed quantity of book founded.");
+                    flag = true;
                     break;
             }
         }
 
-        if (!foundBook) {
-            alert("Invalid Input For Book Details !!!");
+        if (!flag) {
+            alert("Needed quantity of book doesn't available, try lesser quantity");
         }
 
     } catch(error) {
@@ -87,12 +69,11 @@ function validateForm(libraryBooks) {
 
         var firstName = document.getElementById("f_name").value;
         var middleName = document.getElementById("m_name").value;
-        var lastame = document.getElementById("l_name").value;
+        var lastName = document.getElementById("l_name").value;
         var mail = document.getElementById("mail").value;
         var phoneNumber = document.getElementById("ph_no").value;
         var deliveryAddress = document.getElementById("add").value;
         var deliveryDate = document.getElementById("delivered_date").value;
-
 
         if (!bookID || !bookAuthor || !quantity || !bookTitle) {
             alert("Please fill in all book details.");
@@ -111,50 +92,20 @@ function validateForm(libraryBooks) {
 
         localStorage.setItem("libraryBooks",JSON.stringify(libraryBooks));
 
-        // ------------------------------------------------------------
-
-        if(firstName.length < 3){
-            alert("First Name Smaller Too Much (Minimum 3 Characters)")
+        var nameExpression = /^[a-zA-Z]{3,10}$/;
+        if(!nameExpression.test(firstName) || !nameExpression.test(middleName) || !nameExpression.test(lastName)){
+            alert("Name must be between 3 to 10 characters long and can only contain letters.");
             return false;
         }
 
-        if(firstName.length > 10){
-            alert("Frist Name Bigger Too Much (Maximum 10 Characters)")
+        var phoneNubmerExpression = /^\d{11}$/; // Corrected regular expression
+        if(phoneNumber.length !== 11 || !phoneNubmerExpression.test(phoneNumber)){
+            alert("Phone number must be exactly 11 digits long.");
             return false;
         }
 
-        if(middleName.length < 3){
-            alert("Middle Name Smaller Too Much (Minimum 3 Characters)")
-            return false;
-        }
-
-        if(middleName.length > 10){
-            alert("Middle Name Bigger Too Much (Maximum 10 Characters)")
-            return false;
-        }
-
-        if(lastame.length < 3){
-            alert("Last Name Smaller Too Much (Minimum 3 Characters)")
-            return false;
-        }
-
-        if(lastame.length > 10){
-            alert("Last Name Bigger Too Much (Maximum 10 Characters)")
-            return false;
-        }
-
-        if(phoneNumber.length < 10){
-            alert("Phone Number Smaller Too Much (Minimum 10 Characters)")
-            return false;
-        }
-
-        if(deliveryAddress.length < 8){
-            alert("Delivery Address Smaller Too Much (Minimum 8 Characters)")
-            return false;
-        }
-
-        if(deliveryAddress.length > 30){
-            alert("Delivery Address Bigger Too Much (Maximum 30 Characters)")
+        if(deliveryAddress.length < 4){
+            alert("Delivery address must be at least 4 characters long.");
             return false;
         }
 
@@ -163,13 +114,13 @@ function validateForm(libraryBooks) {
             bookAuthor,
             quantity,
             bookTitle,
-            firstName: firstName,
-            middleName: middleName,
-            lastName: lastame,
-            mail: mail,
-            phoneNumber: phoneNumber,
-            deliveryAddress: deliveryAddress,
-            deliveryDate: deliveryDate
+            firstName,
+            middleName,
+            lastName,
+            mail,
+            phoneNumber,
+            deliveryAddress,
+            deliveryDate
         };
 
         localStorage.setItem("FormData", JSON.stringify(formData));

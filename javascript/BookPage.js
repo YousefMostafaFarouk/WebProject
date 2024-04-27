@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function(){
         books = JSON.parse(storedBooks);
     }
     books.forEach(function (book) {
-        if(book.bookID==id){
+        if(book.bookID == id){
             container.innerHTML += bookdefinition(book);
             document.getElementById("del").addEventListener("click", function(){
                 book.numberofcopies = 0;
@@ -34,12 +34,18 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     });
     localStorage.setItem('libraryBooks', JSON.stringify(books));
+
+    // Add event listener for the borrow button
+    document.getElementById("borrow").addEventListener("click", function(){
+        var book = books.find(book => book.bookID == id);
+        redirectToBorrowPage(id, book);
+    });
 });
 
 function btns(id){
     return `
             <div>
-                <button class="borrow" id="borrow"><a class="btnword" href="BorrowBook.html" target="_blanc">Borrow</a></button>
+                <button class="borrow" id="borrow"><a class="btnword" href="BorrowBook.html?id=${id}" target="_blanc">Borrow</a></button>
                 <button class="edit" id="edit"><a class="btnword" href="EditBook.html?id=${id}" target="_blanc">Edit</a></button>
                 <input class="delete" id="del" type="button" value="Delete">
             </div>
@@ -50,8 +56,31 @@ function btns(id){
             <div>
                 <button class="commentbtn">Comment</button>
             </div>
-            `
+            `;
 }
+
+function btnsWithBook(id, book) {
+    return `
+            <div>
+                <button class="borrow" id="borrow" onclick="redirectToBorrowPage(${id}, ${JSON.stringify(book)})">Borrow</button>
+                <button class="edit" id="edit"><a class="btnword" href="EditBook.html?id=${id}" target="_blanc">Edit</a></button>
+                <input class="delete" id="del" type="button" value="Delete">
+            </div>
+            <div>
+                <h3 class="commentword">Share your Opinion</h3>
+                <textarea class="commentbox" placeholder="Put you Comment here!"></textarea>
+            </div>
+            <div>
+                <button class="commentbtn">Comment</button>
+            </div>
+            `;
+}
+
+function redirectToBorrowPage(id, book) {
+    localStorage.setItem('borrowBookInfo', JSON.stringify({ id: id, book: book }));
+    window.location.href = `BorrowBook.html?id=${id}&title=${encodeURIComponent(book.title)}&author=${encodeURIComponent(book.author)}`;
+}
+
 
 function bookdefinition(book){
     return ` 
@@ -67,5 +96,5 @@ function bookdefinition(book){
             <h5>Price : ${book.price}</h5>
             <p>${book.description}</p>
         </div> 
-        `
+        `;
 }
