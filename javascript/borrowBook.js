@@ -45,7 +45,7 @@ function checkAvailability(libraryBooks) {
                 libraryBooks[bookData].author == bookAuthor && 
                 libraryBooks[bookData].numberofcopies >= quantity && 
                 libraryBooks[bookData].title == bookTitle) {
-                    alert("Needed quantity of book founded.");
+                    alert("Needed quantity of book exists.");
                     flag = true;
                     break;
             }
