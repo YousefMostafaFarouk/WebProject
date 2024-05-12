@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block  head_block %}
+    <link rel="stylesheet" href="{% static 'css/About.css' %}">
+    <style>
+        body{
+            background-image: url({% static 'images/library_background2.jpg' %});
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+        }
+
+        :root {
+            --background-image-url: url("{% static 'images/bp.png' %}");
+        }
+    </style>
+{% endblock   %}
+
+{% block  title %}
+    About Us
+{% endblock  %}
+
+{% block content %}
+    <div class="aboutus_text">
+        <h1>About us:</h1>
+    </div>
+
+    <div class="aboutus_book">
+        <div class="book_first_page">
+            <h2>Names:</h2>
+            <ul>
+                <li>Yousef Mostafa</li>
+                <li>Ahmed elsayed</li>
+                <li>Omar Abdelmonem</li>
+                <li>Ahmed Nasser</li>
+                <li>Yassin Ramadan</li>
+            </ul>
+            <h2>IDS:</h2>
+            <ul>
+                <li>20220413</li>
+                <li>20220011</li>
+                <li>20220227</li>
+                <li>20220045</li>
+                <li>20220380</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

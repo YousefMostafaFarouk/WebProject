@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    EgyBooks
+{% endblock %}
+
+{% block head_block %}
+    <link rel="stylesheet" href="{% static 'css/introtext.css' %}"> 
+    <style>
+        body{
+            background-image: url({% static 'images/library_background2.jpg' %});
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+        }
+
+        :root {
+            --background-image-url: url("{% static 'images/29660.jpg' %}");
+        }
+    </style>
+{% endblock %}
+
+
+{% block content %}
+    <div class="header_text">
+        <h1>
+            Welcome to EgyBooks!
+        </h1>
+    </div>
+    <div class="para_text">
+        <p>
+            EgyBooks is an online library website that helps people search for books
+            and borrow them
+        </p>
+    </div>
+    <div class="intro_text">
+    </div>
+{% endblock  %}

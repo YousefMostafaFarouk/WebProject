@@ -1,0 +1,87 @@
+.nav_bar_actions{
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(69, 39, 17);
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+.nav_bar_icon{
+  height: 2.6em;
+}
+
+.nav_bar_button {
+  text-align: center;
+  padding: 0px;
+  margin: 0px;
+  --color: rgb(182, 173, 144);
+  font-size: larger;
+  display: inline-block;
+  width: 8em;
+  height: 2.6em;
+  line-height: 2.5em;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid black;
+  transition: color .25s;
+  z-index: 1;
+  border-radius: 6px;
+  color: var(--color);
+ }
+
+ .nav_bar_button a{
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+ }
+ 
+ .nav_bar_button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: var(--color);
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
+ }
+ 
+ .nav_bar_button:hover {
+  color: #000000;
+ }
+
+ .nav_bar_button:hover a{
+  color: black;
+ }
+ 
+ .nav_bar_button:before {
+  top: 100%;
+  left: 100%;
+  transition: all .7s;
+ }
+ 
+ .nav_bar_button:hover:before {
+  top: -30px;
+  left: -30px;
+ }
+ 
+ .nav_bar_button:active:before {
+  background: rgb(101, 109, 74);
+  transition: background 0s;
+ }
+
+ .center_buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.left_buttons{
+    display: flex;
+    margin-right: auto;
+}
+
+.right_buttons{
+    display: flex;
+    margin-left: auto;
+}
+* {
+    font-family: "Shadow Into Light", cursive;
+}
