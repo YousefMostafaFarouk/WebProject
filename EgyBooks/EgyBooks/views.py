@@ -6,3 +6,6 @@ def homepage(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def borrowbook(request):
+    return render(request, 'borrowbook.html')
