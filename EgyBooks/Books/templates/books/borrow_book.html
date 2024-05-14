@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block head_block  %}
+<link rel="stylesheet" href="{% static 'css/borrow_book.css' %}">
+{% endblock  %}
+
+{% block title %}
+    Borrow Book | {{ book.title }}
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <header>Borrow Book</header>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form">
+            <div class="bookDetails">
+                <span class="title">Book Details</span>
+
+                <div class="fields">
+                    <div class="inputField">
+                        <label for="bk_id">Book ID</label>
+                        {{ form.id}}
+                        {% if form.id.errors %}
+                        <p class="error">{{ form.id.errors }}</p>
+                        {% endif %}
+                    </div>
+
+                    <div class="inputField">
+                        <label for="book_author">Author</label>
+                        {{ form.author }}
+                        {% if form.author.errors %}
+                        <p class="error">{{ form.author.errors }}</p>
+                        {% endif %}
+                    </div>
+
+                    <div class="inputField">
+                        <label for="quan">Quantity</label>
+                        {{ form.amount }}
+                        {% if form.amount.errors %}
+                        <p class="error">{{ form.amount.errors }}</p>
+                        {% endif %}
+                    </div>
+
+                    <div class="inputField">
+                        <label for="bk_tit">Book Title</label>
+                        {{ form.title }}
+                        {% if form.title.errors %}
+                        <p class="error">{{ form.title.errors }}</p>
+                        {% endif %}
+                    </div>
+
+                    <div class="submit">
+                        <input type="submit" name="Submit" value="Submit" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock content %}

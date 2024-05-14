@@ -1,33 +1,58 @@
-
 document.addEventListener("DOMContentLoaded", function(){
-    var books = getBooksData();
-    console.log(books);
-    var container = document.getElementById("all_books");
-    console.log(container);
+    getBooksData().then(function(books) {
+        var container = document.getElementById("all_books");
+        var isRender = false;
+        var searching = false;
+        console.log(books);
 
-    var isrender=false;
+        const params = new URLSearchParams(window.location.search);
 
-    books.forEach(function (book) {
-        console.log(book);
-        if(book.numberofcopies>0){
-            container.innerHTML+= generateBookHTML(book);
-            isrender=true;
+        searchValue = params.get('search');
+    
+        filterValue = params.get('filter');
+
+        if(searchValue != null || filterValue != null)
+            searching = true;
+
+
+        books.forEach(function (book) {
+            if(book.number_of_copies > 0 && !searching){
+                container.innerHTML += generateBookHTML(book);
+                isRender = true;
+            }
+            else{
+                if('title' == filterValue && book.title.toLowerCase().includes(searchValue.toLowerCase())){
+                    container.innerHTML+= generateBookHTML(book);
+                    isRender=true;
+                }
+                else if('author' == filterValue && book.author.toLowerCase().includes(searchValue.toLowerCase())){
+                    container.innerHTML+= generateBookHTML(book);
+                    isRender=true;
+                }
+                else if('category' == filterValue && book.category.toLowerCase().includes(searchValue.toLowerCase())){
+                    container.innerHTML+= generateBookHTML(book);
+                    isRender=true;
+                }
+            }
+        });
+
+        if(!isRender){
+            container.innerHTML +=
+            `
+                <p style = "font-size:20px">there is no books</p>
+            `;
         }
+    }).catch(function(error) {
+        console.log('Error fetching books data:', error);
+        alert('Error fetching book data');
     });
-
-    if(!isrender){
-        container.innerHTML+=
-        `
-            <p style = "font-size:20px">there is no books</p>
-        `
-    }
-})
+});
 
 function generateBookHTML(book) {
     return `
         <div class="book_block">
-            <a href="BookPage.html?id=${book.bookID}" class="book_link">
-                <img src="${book.image}" alt="Book Cover" class="book_image">
+            <a href="book-page/${book.id}" class="book_link">
+                <img src="../../media/${book.book_cover}" alt="Book Cover" class="book_image">
                 <div class="book_details">
                     <h2 class="book_title">Title : ${book.title}</h2>
                     <p class="book_author">Author : ${book.author}</p>
@@ -40,12 +65,18 @@ function generateBookHTML(book) {
 }
 
 function getBooksData(){
-    var booksData = localStorage.getItem('libraryBooks');
-    if (booksData) {
-        return JSON.parse(booksData);
-    } else {
-        console.log('Error');
-        return [];
-    }
+    return new Promise(function(resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    resolve(JSON.parse(xhr.responseText));
+                } else {
+                    reject('Error fetching books data');
+                }
+            }
+        };
+        xhr.open("GET", "/api/get-books-data", true);
+        xhr.send();
+    });
 }
-

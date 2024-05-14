@@ -67,4 +67,3 @@ function extractSearchTextAndFilter() {
     return { searchText: searchText, selectedFilter: selectedFilter };
 }
 
-// Action bar Code

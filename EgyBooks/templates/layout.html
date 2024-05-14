@@ -43,9 +43,9 @@
             </div>
             <div class="center_buttons">
                 <ul id="index_button" class="nav_bar_button"><a href="/">Home</a></ul>
-                <ul id="viewall_button" class="nav_bar_button"><a href="ViewBooks.html">View all</a></ul>
-                <ul id="borrow_book_button" class="nav_bar_button"><a href="BorrowBook.html">Borrow Book</a></ul>
-                <ul id="add_book_button" class="nav_bar_button"><a href="AddBook.html">Add Book</a></ul>
+                <ul id="viewall_button" class="nav_bar_button"><a href="{% url 'books:view-all' %}">View all</a></ul>
+                <ul id="borrow_book_button" class="nav_bar_button"><a href="{% url 'books:borrow-book-no-id' %}">Borrow Book</a></ul>
+                <ul id="add_book_button" class="nav_bar_button"><a href="{% url 'books:add-book' %}">Add Book</a></ul>
             </div>
             <div class ="right_buttons">
                 <ul id="profile_button" class="nav_bar_button"><a href="Profile.html">Profile</a></ul>

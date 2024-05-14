@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function(){
     var books = getBooksData();
     console.log(books);

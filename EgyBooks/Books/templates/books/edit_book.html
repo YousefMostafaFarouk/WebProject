@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block head_block  %}
+    <script src="{% static 'js/addbook.js' %}"></script>
+    <link rel = "stylesheet" href="{% static 'css/add_book.css' %}">
+{% endblock  %}
+
+{% block title %}
+    Edit Book
+{% endblock title %}
+
+{% block content %}
+    <form class="add_book_class" id ="addBookForm" method="post" action="{% url 'books:edit-book' book_id=book_id %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p class="title">Edit Book</p>
+
+        <div class="form_group">
+            <label class = "subtitle" for="image">choose photo for the book</label>
+            {{ form.book_cover }}
+            {% if form.book_cover.errors %}
+                <p class="error">{{ form.book_cover.errors }}</p>
+            {% endif %}
+            <br><br>
+        </div>
+
+        <div class="form_group">
+            <label class = "subtitle" for="nameofthebook">name of the book</label>
+            {{ form.title }}
+            {% if form.title.errors %}
+            {{ form.title.errors }}
+            {% endif %}
+            <br><br>
+        </div>
+
+        <div class="form_group">
+            <label class = "subtitle" for="author">author</label>
+            {{ form.author }}
+            {% if form.author.errors %}
+                <p class="error">{{ form.author.errors }}</p>
+            {% endif %}
+            <br><br>
+        </div>
+
+        <div class="form_group">
+            <label class = "subtitle" for="category">category</label>
+            {{ form.category }}
+            {% if form.category.errors %}
+                <p class="error">{{ form.category.errors }}</p>
+            {% endif %}
+            <br><br>
+        </div>
+
+        <div class="form_group">
+            <label class = "subtitle" for="numberofpages">number of pages</label>
+            {{ form.number_of_pages}}
+            {% if form.number_of_pages.errors %}
+                <p class="error">{{ form.number_of_pages.errors }}</p>
+            {% endif %}
+            <br><br>
+        </div>
+
+        <div class="form_group">
+            <label class = "subtitle" for="description">description</label>
+            {{ form.description }}
+            {% if form.description.errors %}
+                <p class="error">{{ form.description.errors }}</p>
+            {% endif %}
+            <br><br>
+
+        </div>
+
+        <div class="form_group">
+            <label class = "subtitle" for="price">Price</label>
+            {{ form.price }}
+            {% if form.price.errors %}
+                <p class="error">{{ form.price.errors }}</p>
+            {% endif %}
+            <br><br>
+        </div>
+
+        <div class="form_group">
+            <label class = "subtitle" for="numberofcopies">Number of copies</label>
+            {{ form.number_of_copies }}
+            {% if form.number_of_copies.errors %}
+                <p class="error">{{ form.number_of_copies.errors }}</p>
+            {% endif %}
+            <br><br>
+        </div>
+
+        <input type="submit" value="Add Book" style="font-size:25px;border-radius: 5px;">
+    </form>
+{% endblock content %}
