@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    EgyBooks
+{% endblock %}
+
+{% block head_block %}
+<script src="{% static 'javascript/SignUp.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/Signup_styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="signup-class">
+    <h1 id="signup-h1">Sign Up</h1>
+    
+    <form method="POST">
+        <div>
+            <label for="username">Username</label>
+            <input id="user_name_text" type="text" required id="username" name="username" placeholder="Enter your username">
+        </div>
+    
+        <br>
+
+        <div>
+            <label for="password">Password</label>
+            <input id="password_text" type="password" required id="password" name="password" placeholder="Enter your password">
+        </div>
+
+        <br>
+
+        <div>
+            <label for="confirm password">Confirm password</label>
+            <input id="confirm_password_text" type="password" required id="confirm password" name="confirm password" placeholder="Re-enter password">
+        </div>
+
+        <br>
+
+        <div>
+            <label for="email">Email</label>
+            <input id="email_text" type="email" required id="email" name="email" placeholder="Enter your email address">
+        </div>
+
+        <br>
+
+        <div>
+            <label for="account type">Account Type:</label>
+
+            <div id="radio_button" class="acc-type">
+                <label for="Admin">Admin</label>
+                <input type="radio" required id="Admin" name="account type" value="Admin">
+
+                <label for="User">User</label>
+                <input type="radio" required id="User" name="account type" value="User">
+            </div>
+        </div>
+
+        <br>
+
+        <div>
+            <input type="reset" value="Reset">
+        </div>
+
+        <br>
+
+        <div>
+            <input id="signup_button" type="submit" value="Sign Up">
+        </div>
+
+        <br>
+
+        <div>
+            <p id="para-login-acc">Already have an account? <a id="login-signup-acc" href="/login">Login</a></p>
+        </div>
+    </form>
+</div>    
+{% endblock %}

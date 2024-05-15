@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    EgyBooks
+{% endblock %}
+
+{% block head_block %}
+<script src="{% static 'javascript/Login.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/Login_styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="login-class">
+    <h1 id="login-h1">Login</h1>
+    <form method="POST">
+        <div >
+            <div>
+                <label for="username">Username</label>
+                <input id="login_username" type="text" required id="username" name="username" placeholder="Enter your username">
+            </div>
+
+            <br>
+
+            <div>
+                <label for="password">Password</label>
+                <input id="login_password" type="password" required id="password" name="password" placeholder="Enter your password">
+            </div>
+
+            <br>
+
+            <div>
+                <input type="reset" value="Reset">
+            </div>
+
+            <br>
+
+            <div>
+                <input type="submit" value="Login">
+            </div>
+
+            <br>
+
+            <div>
+                <p id="para-acc">Don't have an account? <a id="login-signup" href="/signup">Sign Up</a></p>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
