@@ -30,5 +30,6 @@ urlpatterns = [
     path('about/', views.about),
     path('books/', include('Books.urls')),
     path('api/', include('api.urls')),
+    path('user/', include('User.urls')),
 ]
 

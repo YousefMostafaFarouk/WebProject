@@ -11,8 +11,8 @@ def view_all(request, combination=None):
     filter_param = request.GET.get('filter')
     return render(request, 'books/view_all.html')
 
-#@login_required()
-#@staff_member_required()
+@login_required()
+@staff_member_required()
 def add_book(request):
     if request.method == 'POST':
        form = forms.AddBook(request.POST, request.FILES)
@@ -28,7 +28,7 @@ def book_page(request, book_id):
     book = Book.objects.get(id = book_id)
     return render(request, 'books/book_page.html', {'book':book })
 
-#@login_required()
+@login_required()
 def borrow_book(request, book_id=None):
     if request.method == 'POST':
         form = forms.BorrowBook(request.POST)
@@ -64,8 +64,8 @@ def borrow_book(request, book_id=None):
     
     return render(request, 'books/borrow_book.html', {'form':form })
 
-#@login_required()
-#@staff_member_required()
+@login_required()
+@staff_member_required()
 def edit_book(request, book_id):
     book = get_object_or_404(Book, id = book_id)
     form = forms.AddBook(request.POST or None, request.FILES or None, instance=book)

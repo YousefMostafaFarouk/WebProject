@@ -38,14 +38,26 @@
         <div class="nav_bar_actions">
             <img class = "nav_bar_icon" src="{% static 'images/web_icon.png'%}">
             <div class = "left_buttons">
-                <ul id="login_button" class="nav_bar_button"><a href="Login.html">Login</a></ul>
-                <ul id="signup_button" class="nav_bar_button"><a href="Signup.html">Sign Up</a></ul>
+                {% if not user.is_authenticated %}
+                <ul id="login_button" class="nav_bar_button"><a href="{% url 'user:login' %}">Login</a></ul>
+                <ul id="signup_button" class="nav_bar_button"><a href="{% url 'user:register' %}">Sign Up</a></ul>
+                {% endif %}
+
+                {% if user.is_authenticated %}
+                <ul id="login_button" class="nav_bar_button"><a href="{% url 'user:logout' %}" >Logout</a></ul>
+                {% endif %}
             </div>
             <div class="center_buttons">
                 <ul id="index_button" class="nav_bar_button"><a href="/">Home</a></ul>
                 <ul id="viewall_button" class="nav_bar_button"><a href="{% url 'books:view-all' %}">View all</a></ul>
-                <ul id="borrow_book_button" class="nav_bar_button"><a href="{% url 'books:borrow-book-no-id' %}">Borrow Book</a></ul>
-                <ul id="add_book_button" class="nav_bar_button"><a href="{% url 'books:add-book' %}">Add Book</a></ul>
+
+                {% if user.is_authenticated %}
+                    <ul id="borrow_book_button" class="nav_bar_button"><a href="{% url 'books:borrow-book-no-id' %}">Borrow Book</a></ul>
+                {% endif %}
+
+                {% if user.is_superuser %}
+                    <ul id="add_book_button" class="nav_bar_button"><a href="{% url 'books:add-book' %}">Add Book</a></ul>
+                {% endif %}
             </div>
             <div class ="right_buttons">
                 <ul id="profile_button" class="nav_bar_button"><a href="Profile.html">Profile</a></ul>

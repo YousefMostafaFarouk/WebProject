@@ -11,4 +11,5 @@ urlpatterns = [
     path('borrow-book/<int:book_id>', views.borrow_book, name='borrow-book'),
     path('borrow-book/', views.borrow_book, name='borrow-book-no-id'),
     path('edit-book/<int:book_id>', views.edit_book, name='edit-book'),
+    #path('delete-book/<int:book_id>', views.delete_book, name='delete-book'),
 ]

@@ -51,8 +51,8 @@ document.addEventListener("DOMContentLoaded", function(){
 function generateBookHTML(book) {
     return `
         <div class="book_block">
-            <a href="book-page/${book.id}" class="book_link">
-                <img src="../../media/${book.book_cover}" alt="Book Cover" class="book_image">
+            <a href="/books/book-page/${book.id}" class="book_link">
+                <img src="/media/${book.book_cover}" alt="Book Cover" class="book_image">
                 <div class="book_details">
                     <h2 class="book_title">Title : ${book.title}</h2>
                     <p class="book_author">Author : ${book.author}</p>
