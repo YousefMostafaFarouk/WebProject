@@ -32,7 +32,7 @@
             <div>
                 <button class="edit" id="edit"><a class="btnword" href="{% url 'books:edit-book' book_id=book.id%}" target="_blanc">Edit</a></button>
                 <button class="borrow" id="borrow"><a class="btnword" href="{% url 'books:borrow-book' book_id=book.id%}" target="_blanc">Borrow</a></button>
-                <input class="delete" id="del" type="button" value="Delete">
+                <button class="delete" id="del"><a class="btnword" href="{% url 'books:delete-book' book_id=book.id%}" >Delete</a></button>
             </div>
             <div>
                 <h3 class="commentword">Share your Opinion</h3>

@@ -60,7 +60,9 @@
                 {% endif %}
             </div>
             <div class ="right_buttons">
-                <ul id="profile_button" class="nav_bar_button"><a href="Profile.html">Profile</a></ul>
+                {% if user.is_authenticated %}
+                <ul id="profile_button" class="nav_bar_button"><a href="{% url 'user:profile' %}">Profile</a></ul>
+                {% endif %}
                 <ul id="aboutus_button" class="nav_bar_button"><a href="/about">About Us</a></ul>
             </div>
         </div>

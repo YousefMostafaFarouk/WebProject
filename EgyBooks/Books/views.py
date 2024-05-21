@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import Book
+from .models import Book, BorrowedBooks
 from . import forms
 from django.shortcuts import get_object_or_404
 from django.contrib.auth.decorators import login_required
@@ -25,7 +25,7 @@ def add_book(request):
     return render(request, 'books/add_book.html', { 'form':form })
 
 def book_page(request, book_id):
-    book = Book.objects.get(id = book_id)
+    book = get_object_or_404(Book, id = book_id)
     return render(request, 'books/book_page.html', {'book':book })
 
 @login_required()
@@ -47,6 +47,8 @@ def borrow_book(request, book_id=None):
                 else:
                     book.number_of_copies -= amount
                     book.save()
+                    borrowed_book = BorrowedBooks(user = request.user, book=book, number_of_borrowed_books=amount)
+                    borrowed_book.save()
                     return redirect('books:view-all')
             else:
                 form.add_error('id', "Book doesn't exist")
@@ -75,3 +77,10 @@ def edit_book(request, book_id):
         return redirect('books:book-page', book_id = book.id)
     
     return render(request, 'books/edit_book.html', {'form' : form, 'book_id':book_id})
+
+@login_required()
+@staff_member_required()
+def delete_book(request, book_id):
+    book = get_object_or_404(Book, id = book_id)
+    book.delete()
+    return redirect("books:view-all")
