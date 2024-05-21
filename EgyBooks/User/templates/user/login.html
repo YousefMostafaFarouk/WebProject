@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    EgyBooks
+{% endblock %}
+
+{% block head_block %}
+<link rel="stylesheet" href="{% static 'css/Login_styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="login-class">
+    <h1 id="login-h1">Login</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <div >
+            <div>
+                <label for="username">Username</label>
+                {{ form.username }}
+                {% if form.username.errors  %}
+                <p class="error">{{ form.username.errors }}</p>
+                {% endif %}
+                
+                {% if form.non_field_errors %}
+                    <p class="error">{{ form.non_field_errors }}</p>
+                {% endif %}
+            </div>
+
+            <br>
+
+            <div>
+                <label for="password">Password</label>
+                {{ form.password }}
+                {% if form.password.errors %}
+                    <p class="error">{{ form.password.errors }}</p>
+                {% endif %}
+            </div>
+
+            <br>
+
+            <div>
+                <input type="submit" value="Login">
+            </div>
+
+            <br>
+
+            <div>
+                <p id="para-acc">Don't have an account? <a id="login-signup" href="{% url 'user:register' %}">Sign Up</a></p>
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

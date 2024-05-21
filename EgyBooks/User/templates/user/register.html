@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block title %}
+    EgyBooks
+{% endblock %}
+
+{% block head_block %}
+<script src="{% static 'js/SignUp.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/Signup_styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="signup-class">
+    <h1 id="signup-h1">Sign Up</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <div>
+            <label for="username">Username</label>
+            {{ form.username }}
+            {% if form.username.errors  %}
+                <p class="error">{{ form.username.errors }}</p>
+            {% endif %}
+        </div>
+
+        <br>
+
+        <div>
+            <label for="password">Password</label>
+            {{ form.password1 }}
+            {% if form.password1.errors %}
+                <p class="error">{{ form.password1.errors }}</p>
+            {% endif %}
+        </div>
+
+        <br>
+
+        <div>
+            <label for="confirm password">Confirm password</label>
+            {{ form.password2 }}
+            {% if form.password2.errors %}
+                <p class="error">{{ form.password2.errors }}</p>
+            {% endif %}
+        </div>
+
+        <br>
+
+        <div>
+            <label for="email">Email</label>
+            {{ form.email }}
+            {% if form.email.errors %}
+                <p class="error">{{ form.email.errors }}</p>
+            {% endif %}
+        </div>
+
+        <br>
+
+        <div>
+            <label for="account type">Account Type:</label>
+
+            <div id="radio_button" class="acc-type">
+                {% for radio in form.role %}
+                    {{ radio }}
+                {% endfor %}
+                {% if form.role.errors %}
+                    <p class="error">{{ form.role.errors }}</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div>
+            <input id="signup_button" type="submit" value="Sign Up">
+        </div>
+
+        <br>
+
+        <div>
+            <p id="para-login-acc">Already have an account? <a id="login-signup-acc" href="{% url 'user:login' %}">Login</a></p>
+        </div>
+    </form>
+</div>    
+{% endblock %}
