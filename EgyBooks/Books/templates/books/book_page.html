@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block head_block  %}
+    <script src="{% static 'js/BookPage.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/BookPage.css' %}">
+{% endblock  %}
+
+{% block title %}
+    
+{% endblock title %}
+    EgyBooks | {{ book.title}} 
+{% block content %}
+    <div class="book" id="Book">
+        <div>
+            <img class="bookimg" alt="The book preface" src="{{ book.book_cover.url }}">
+        </div>
+        <div class="bookdef">
+            <h1>{{ book.title }}</h1>
+            <h2>Category : {{ book.category }}</h2>
+            <h2>Author : {{ book.author }}</h2>
+            <h5>Number of Copies : {{ book.number_of_copies }}</h5>
+            <h5>Number of Pages : {{ book.number_of_pages }}</h5>
+            <h5>Price : {{ book.price }}</h5>
+            <p>{{ book.description }}</p>
+        </div> 
+    </div>
+
+    <div>
+        <div class="btns" id="Btns">
+            <div>
+                <button class="edit" id="edit"><a class="btnword" href="{% url 'books:edit-book' book_id=book.id%}" target="_blanc">Edit</a></button>
+                <button class="borrow" id="borrow"><a class="btnword" href="{% url 'books:borrow-book' book_id=book.id%}" target="_blanc">Borrow</a></button>
+                <button class="delete" id="del"><a class="btnword" href="{% url 'books:delete-book' book_id=book.id%}" >Delete</a></button>
+            </div>
+            <div>
+                <h3 class="commentword">Share your Opinion</h3>
+                <textarea class="commentbox" placeholder="Put you Comment here!"></textarea>
+            </div>
+            <div>
+                <button class="commentbtn">Comment</button>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

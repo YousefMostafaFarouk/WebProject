@@ -1,12 +1,3 @@
-var accountType = JSON.parse(localStorage.getItem('userInfo')).account_type;
-var loggedIn = JSON.parse(localStorage.getItem('loggedIn'));
-
-function getUrlParameter(name) {
-    const params = new URLSearchParams(window.location.search);
-    console.log(params.get(name));
-    return params.get(name);
-}
-
 document.addEventListener("DOMContentLoaded", function(){
     var container = document.getElementById("Book");
     var storedBooks = localStorage.getItem('libraryBooks');

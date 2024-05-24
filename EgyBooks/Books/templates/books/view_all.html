@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+
+{% block head_block  %}
+    <link rel = "stylesheet" href="{% static 'css/all_books.css' %}">
+    <script src="{% static 'js/viewbooks.js' %}"></script>
+
+{% endblock  %}
+
+{% block title %}
+    View All Books
+{% endblock title %}
+
+{% block content %}
+    <div class="all_books" id ="all_books">
+
+    </div>
+{% endblock content %}

@@ -3,10 +3,10 @@ var userInfoString = localStorage.getItem("userInfo");
 function validateForm(){
 
     try{
-        var newUserName = document.getElementById("username").value;
-        var newPassword = document.getElementById("password").value;
-        var newConfirmPassword = document.getElementById("confirm_password").value;
-        var newEmail = document.getElementById("email").value;
+        var newUserName = document.getElementById("id_username").value;
+        var newPassword = document.getElementById("id_password1").value;
+        var newConfirmPassword = document.getElementById("id_password2").value;
+        var newEmail = document.getElementById("id_email").value;
     }
     catch(error){
         console.log(error)
@@ -48,38 +48,19 @@ function validateForm(){
         return false;
     }
 
-    var userInfo = {
-        username: newUserName,
-        password: newPassword,
-        email: newEmail,
-        account_type: JSON.parse(userInfoString).account_type
-    };
-
-    localStorage.setItem("userInfo", JSON.stringify(userInfo));
-
     return true;
 }
 
 document.addEventListener("DOMContentLoaded", function(){
     console.log("hereDom");
 
-    var form = document.querySelector("form");
+    var form = document.querySelector("form.edit_form_class");
 
     form.addEventListener("submit", function(event){
         event.preventDefault();
         
         if(validateForm()){
-            var userInfoString = localStorage.getItem("userInfo");
-            var userInfo = JSON.parse(userInfoString);
-            var username = userInfo.newUserName;
-            var password = userInfo.newPassword;
-            var email = userInfo.newEmail;
-            var accountType = userInfo.account_type;
-            console.log("Username:", username);
-            console.log("Password:", password);
-            console.log("Email:", email);
-            console.log("Account Type:", accountType);
-            window.location.href = "Profile.html";
+            form.submit()
             alert("Profile Data Updated!");
         }
     })
