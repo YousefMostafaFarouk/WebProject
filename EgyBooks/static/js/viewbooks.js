@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if(!isRender){
             container.innerHTML +=
             `
-                <p style = "font-size:20px">there is no books</p>
+                <p style = "font-size:20px">there are no books</p>
             `;
         }
     }).catch(function(error) {
@@ -57,6 +57,7 @@ function generateBookHTML(book) {
                     <h2 class="book_title">Title : ${book.title}</h2>
                     <p class="book_author">Author : ${book.author}</p>
                     <p class="book_category">Category : ${book.category}</p>
+                    <p class ="book_category">Book id: ${book.id}</p>
                     <p class="book_price">Price : ${book.price}$</p>
                 </div>
             </a>
