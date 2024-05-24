@@ -22,6 +22,20 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Permanent+Marker&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-image: url({% static 'images/library_background2.jpg' %});
+            height: 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        :root {
+            --background-image-url: url("{% static 'images/29660.jpg' %}");
+            --bg-image-url : url("{% static 'images/bp.png' %}")
+        }
+    </style>
     <title>
         {% block title %}
             
