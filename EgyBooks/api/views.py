@@ -25,4 +25,4 @@ def get_borrowed_books(request):
         }
         books_data.append(book_data)
 
-    return JsonResponse(books_data, safe=False)
+    return JsonResponse(list(books.book), safe=False)
